@@ -1,0 +1,21 @@
+<div class="container mt-5">
+<table>
+
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>task</th>
+            <th>delete</th>
+            <th>update</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let tas of task,index as i'>
+            <td>{{i+1}}</td>
+            <td>{{tas.tasktitle}}</td>
+            <td><button type="button" (click)='delete(i)' class="btn btn-danger">Delete</button></td>
+            <td><button type="button" class="btn btn-primary" (click)='upd(i)'>Update</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>

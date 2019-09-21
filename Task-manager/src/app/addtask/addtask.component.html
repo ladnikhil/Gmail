@@ -1,0 +1,19 @@
+<div class="container col-md-6 offset-md-3 mt-5 ">
+    
+    <form action="#" method="POST" #form='ngForm' (ngSubmit)="senddata(form.value)">
+        <legend class="text-center">Add task</legend>
+    
+        <div class="form-group">
+           
+            <input type="text" class="form-control" name="tasktitle"  placeholder="addtask" #tasktitle="ngModel" ngModel required>
+        </div>
+        
+    
+        
+    <div class="text-center">
+        <button  type="submit" class="btn btn-primary">addtask</button>
+    </div>
+    </form>
+    
+</div>
+
