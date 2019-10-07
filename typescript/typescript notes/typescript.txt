@@ -1,0 +1,137 @@
+typescript is static type language also known as strongly type(WE CANNOT CHANGE ITS TYPE) and also has oops
+
+typescript is open source programming language developed by anders hejisberg at microsoft.
+
+compile typescript to javascript and then give it it to language
+
+typescript is supersett of javascript
+
+latest version of typescript is 3.5
+
+nodejs is platform to develop server side logic using javascript
+
+node package manager contains lakhs of packages and is inbuilt with nodejs
+
+--------------------------------------------------------------------------------------------------------
+ 					INSTALLATION
+install nodejs from nodejs.org
+
+node -v ----on commND PROMPT to check latest version of nodejs
+
+npm -v------on command prompt to check latest version of npm
+
+npm install packagename-----------in cmd to install particular package in npm
+
+npm uninstall packagename-----------in cmd to uninstall particular package in npm
+
+npm install -g packagename(typescript)-----------in cmd to install particular package in npm globally
+
+npm cache clean --force---------if installation erroe occurs and in new cmd
+
+tsc --init ----------- to create tscconfig.json  wihich handles all our projects
+
+-------------------------------------------------------------------------------------------------------------------
+
+					DATATYPES
+
+primitive ------- number,string,null,undefined,boolean,any,void
+
+references ----------- tuple,function,object,enum,class,interface,union,objects
+
+let name:any = 'nikhil' --------------any is used to give any datatype
+
+---------------------------------------------------------------------------------------------------------
+
+first create html file --then index.ts-----go to terminal----------type tsc index.ts----it will create js folder---in link tag link script file--<script src="app.js"></script>
+again run tsc app.ts --- to run program
+
+tsc app.ts -watch ----automatically checks file
+
+
+
+--------------------------------------------------------------------------------------------------------
+					ACCESS SPECIFIERS
+
+private ------------ cannot be accesed outside class
+
+public -------------- can be accesed anywhere(bydefault)
+
+protected ------------------it can be accessed by subclass
+
+we cannot have multiple constructor in one class
+
+-------------------------------------------------------------------------------------------------------------
+					CLASS
+
+class Car{
+	brand : string='nikhil';  ------------non static members
+static model : string = 'x5';
+}
+
+to acces such static members -----Cars.model
+
+------------------------------------------------------------------------------------------------------------
+
+
+to create object that are optional -------------public degreee?: string
+
+------------------------------------------------------------------------------------------------------------
+
+					INHERITANCE
+
+class Room{
+	constructor(public name:string,public aadhar no:number){
+}
+}
+
+------------------------------------------------------------------------------------------------------------
+					INTERFACE
+
+WE have members without initialization
+
+interface Students{
+	name:string;
+	age:number;
+	printDetails(): void;                            //we can have only abstract classes in interfaces
+}
+
+to initialize we use implements keyword
+}
+
+------------------------------------------------------------------------------------------------------------
+					NAMESPACE
+
+WE use it for grouping multiple functionalities
+
+to link 2 namesapces --- toimport other files
+
+/// <reference path="./circle.ts"/>  ---- give path of that file we need to import
+
+tsc filename which we want to compile --outfile
+
+we can have 2 namespaces with same name
+
+
+
+---------------------------------------------------------------------------------------------------------------
+				PACKET.JASON 
+
+takes care of all node related that we install
+it consist of a jason object
+
+npm init --------- creates package.jason
+
+npm install ----------- get all packages downloaded if thry are deleted
+
+import { class we want to import } from './student';
+
+
+---------------------------------------------------------------------------------------------------------------
+
+				DECORATORS
+
+IT is a aspecial kind of declarration that can bee applied to classes,methods,accessor,property or parameter 
+
+they are simply functions that are prefixed @expression symbol,where expression must evaluate to function that will be called at runtime with information
+
+
