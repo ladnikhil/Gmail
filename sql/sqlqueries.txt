@@ -1,0 +1,2093 @@
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.23 sec)
+
+					CREATE DATABASE
+Q---------- how to create a database
+
+mysql> create database ustglobal
+    -> ;
+Query OK, 1 row affected (0.11 sec)
+
+					SHOW DATABASE
+Q----------HOW TO SEE DATABASES
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| ustglobal          |
++--------------------+
+5 rows in set (0.00 sec)
+
+					USE DATABASE
+
+q------- how to use database
+
+
+mysql> use ustglobal
+Database changed
+mysql> show tables
+    -> ;
+Empty set (0.05 sec)
+
+
+					to create table
+
+q----------how to create a table
+
+
+mysql> create table student(id int,name varchar(120),emailid varchar(120));
+Query OK, 0 rows affected (0.42 sec)
+
+mysql>
+
+					to show tables
+
+q------------- how to show a table
+
+
+mysql> show tables
+    -> ;
++---------------------+
+| Tables_in_ustglobal |
++---------------------+
+| student             |
++---------------------+
+1 row in set (0.00 sec)
+
+
+					to get structure of table
+
+q--------- how to get structure of table
+
+
+mysql> desc student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| name    | varchar(120) | YES  |     | NULL    |       |
+| emailid | varchar(120) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.35 sec)
+
+
+					to drop table
+
+q---------- how to drop table
+
+mysql> drop table student
+    -> ;
+
+
+					to delete a database
+
+q------------ how to delete a database
+
+
+mysql> drop database ustglobal
+    -> ;
+Query OK, 0 rows affected (0.21 sec)
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+					to alter table
+
+q-------------- how to add column name in table
+
+
+
+mysql> alter table student add column age int;
+Query OK, 0 rows affected (0.30 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| name    | varchar(120) | YES  |     | NULL    |       |
+| emailid | varchar(120) | YES  |     | NULL    |       |
+| age     | int(11)      | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+q------------------------ or------------------
+
+
+
+mysql> alter table student add mobileno int;
+Query OK, 0 rows affected (0.24 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++----------+--------------+------+-----+---------+-------+
+| Field    | Type         | Null | Key | Default | Extra |
++----------+--------------+------+-----+---------+-------+
+| id       | int(11)      | YES  |     | NULL    |       |
+| name     | varchar(120) | YES  |     | NULL    |       |
+| emailid  | varchar(120) | YES  |     | NULL    |       |
+| age      | int(11)      | YES  |     | NULL    |       |
+| mobileno | int(11)      | YES  |     | NULL    |       |
++----------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+
+				to delete a column
+
+q---------- to delete a column from table
+
+mysql> alter table student drop mobileno;
+Query OK, 0 rows affected (0.23 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | YES  |     | NULL    |       |
+| name    | varchar(120) | YES  |     | NULL    |       |
+| emailid | varchar(120) | YES  |     | NULL    |       |
+| age     | int(11)      | YES  |     | NULL    |       |
++---------+--------------+----------------------------
+
+				to rename a column
+
+q--------------- to rename a column
+
+
+mysql> alter table student change name studentname varchar(120);
+Query OK, 0 rows affected (0.05 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student
+    -> ;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| id          | int(11)      | YES  |     | NULL    |       |
+| studentname | varchar(120) | YES  |     | NULL    |       |
+| emailid     | varchar(120) | YES  |     | NULL    |       |
+| age         | int(11)      | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+				TO RENAME A TABLE
+
+Q------------ to rename a table
+
+mysql> rename table student to student_info;
+Query OK, 0 rows affected (0.08 sec)
+
+mysql> show tables;
++---------------------+
+| Tables_in_ustglobal |
++---------------------+
+| student_info        |
++---------------------+
+1 row in set (0.00 sec)
+
+					to write data in column
+
+q--------------- to write data in column
+
+insert into student (id,studentname,emailid,age,address) values(1,nikhil,ladnikhil55@gmail.com,21,mumbai);
+
+					to write data one at time
+
+
+ insert into student values(2,'sid','sid@gmail.com',23,'mumbai'),(3,'vikas','vikas@gmail.com',21,'pune'),(4,'akshay','akshay@gmail.com',21,'mumbai');
+Query OK, 3 rows affected (0.03 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   21 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   23 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   23 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   21 | mumbai  |
++------+-------------+-----------------------+------+---------+
+5 rows in set (0.00 sec)
+
+
+
+					TO ADD DATA IN SPECIFIC COLUMN ONLY
+
+Q---------TO ADD DATA IN SPECIFIC COLUMN
+
+insert into student (studentname,age) values('rohan',25);
+Query OK, 1 row affected (0.41 sec)
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   21 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   23 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   23 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   21 | mumbai  |
+| NULL | rohan       | NULL                  |   25 | NULL    |
++------+-------------+-----------------------+------+---------+
+6 rows in set (0.00 sec)
+
+
+					to update a column
+
+q------------------ how to update a column
+
+
+mysql> update student set age = 20 ;
+Query OK, 6 rows affected (0.20 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   20 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   20 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   20 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   20 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   20 | mumbai  |
+| NULL | rohan       | NULL                  |   20 | NULL    |
++------+-------------+-----------------------+------+---------+
+6 rows in set (0.00 sec)
+					to delete all rows
+
+
+mysql> delete from student;
+Query OK, 6 rows affected (0.11 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+					to insert value in table
+
+q---------- to insert value in table
+
+
+mysql> insert into student values(1,'nikhil','ladnikhil55@gmail.com',21,'mumbai'),(2,'sid','sid@gmail.com',25,'mumbai'),(3,'vikas','vikas@gmail.com',21,'pune'),(4,'akshay','akshay@gmail.com',21,'mumbai')
+    -> ;
+Query OK, 4 rows affected (0.08 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   21 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   25 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   21 | mumbai  |
++------+-------------+-----------------------+------+---------+
+4 rows in set (0.00 sec)
+
+					to delete all records in table
+
+mysql> truncate table student;
+Query OK, 0 rows affected (0.23 sec)
+
+mysql> select * from student;
+Empty set (0.00 sec)
+
+
+					to select particular column in table
+
+mysql> select studentname,emailid from student;
++-------------+-----------------------+
+| studentname | emailid               |
++-------------+-----------------------+
+| nikhil      | ladnikhil55@gmail.com |
+| sid         | sid@gmail.com         |
+| vikas       | vikas@gmail.com       |
+| akshay      | akshay@gmail.com      |
++-------------+-----------------------+
+4 rows in set (0.03 sec)
+
+
+						use where clase
+
+q------------ selct data from table where name is nikhil
+
+mysql> select * from student where studentname = 'nikhil';
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   21 | mumbai  |
++------+-------------+-----------------------+------+---------+
+1 row in set (0.05 sec)
+
+q---------------------------select data from table where id is 2
+
+
+mysql> select * from student where id = 2;
++------+-------------+---------------+------+---------+
+| id   | studentname | emailid       | age  | address |
++------+-------------+---------------+------+---------+
+|    2 | sid         | sid@gmail.com |   25 | mumbai  |
++------+-------------+---------------+------+---------+
+1 row in set (0.05 sec)
+
+q------------------------ select data from table where age is 21
+
+
+mysql> select * from student where age = 21;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   21 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   21 | mumbai  |
++------+-------------+-----------------------+------+---------+
+3 rows in set (0.00 sec)
+
+
+
+q------------------------------------- to update using select 
+
+
+mysql> update student set  age=18 where id = 1;
+Query OK, 1 row affected (0.41 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   18 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   25 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
+|    4 | akshay      | akshay@gmail.com      |   21 | mumbai  |
++------+-------------+-----------------------+------+---------+
+4 rows in set (0.00 sec)
+
+q----------------------delete record using where clause
+
+mysql> delete from student where id = 4;
+Query OK, 1 row affected (0.05 sec)
+
+mysql> select * from student;
++------+-------------+-----------------------+------+---------+
+| id   | studentname | emailid               | age  | address |
++------+-------------+-----------------------+------+---------+
+|    1 | nikhil      | ladnikhil55@gmail.com |   18 | mumbai  |
+|    2 | sid         | sid@gmail.com         |   25 | mumbai  |
+|    3 | vikas       | vikas@gmail.com       |   21 | pune    |
++------+-------------+-----------------------+------+---------+
+3 rows in set (0.00 sec)
+
+
+					create table using constraints
+
+
+mysql> create table studentinfo(id int,name varchar(120) not null,emailid varchar(120),primary key(id));
+Query OK, 0 rows affected (0.28 sec)
+
+mysql> desc studentinfo;
++---------+--------------+------+-----+---------+-------+
+| Field   | Type         | Null | Key | Default | Extra |
++---------+--------------+------+-----+---------+-------+
+| id      | int(11)      | NO   | PRI | NULL    |       |
+| name    | varchar(120) | NO   |     | NULL    |       |
+| emailid | varchar(120) | YES  |     | NULL    |       |
++---------+--------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+					create employeeinfo
+
+q----------- create table using constraints
+
+
+mysql> create table employeeinfo(id int,name varchar(120) not null,emailid varchar(120),designation varchar(120),mobilenumber int,age int,DOB date not null,DOJ date,salary double,deptid int,bloodgroup varchar(120),primary key(id));
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> desc employeeinfo;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| id           | int(11)      | NO   | PRI | NULL    |       |
+| name         | varchar(120) | NO   |     | NULL    |       |
+| emailid      | varchar(120) | YES  |     | NULL    |       |
+| designation  | varchar(120) | YES  |     | NULL    |       |
+| mobilenumber | int(11)      | YES  |     | NULL    |       |
+| age          | int(11)      | YES  |     | NULL    |       |
+| DOB          | date         | NO   |     | NULL    |       |
+| DOJ          | date         | YES  |     | NULL    |       |
+| salary       | double       | YES  |     | NULL    |       |
+| deptid       | int(11)      | YES  |     | NULL    |       |
+| bloodgroup   | varchar(120) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+mysql> select * from employeeinfo;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+---
+
+
+q=----------------------------- in designation column SOFTDEVELOPER,HR,CLERK,SALESMAN,ANALYST,TESTTER AND DEPT ID(10,20,30,40)
+
+
+------------------------------------------------------------------------------------------------------------
+						ALIAS
+
+q------------ writte a query to give temporary name of bloodgroup column
+
+mysql> select id,name, bloodgroup as bg from employeeinfo;
++----+---------+------+
+| id | name    | bg   |
++----+---------+------+
+|  1 | nikhil  | A+   |
+|  2 | omkar   | A+   |
+|  3 | sanket  | A+   |
+|  4 | rahul   | A+   |
+|  5 | sahil   | A+   |
+|  6 | rohan   | B    |
+|  7 | pranesh | B    |
+|  8 | jay     | AB   |
+|  9 | anand   | AB   |
+| 10 | ninad   | AB   |
+| 11 | satya   | AB   |
+| 12 | vikas   | O    |
+| 13 | sid     | O    |
+| 14 | vinayak | O    |
+| 15 | kalpesh | O    |
++----+---------+------+
+
+q----------- to id,display employeename salary designation and its annual salary
+
+mysql> select id,name,salary,salary*12 annualsal from employeeinfo;
++----+---------+--------+-----------+
+| id | name    | salary | annualsal |
++----+---------+--------+-----------+
+|  1 | nikhil  |  28000 |    336000 |
+|  2 | omkar   |  28000 |    336000 |
+|  3 | sanket  |  26000 |    312000 |
+|  4 | rahul   |  27000 |    324000 |
+|  5 | sahil   |  14000 |    168000 |
+|  6 | rohan   |  29000 |    348000 |
+|  7 | pranesh |  29000 |    348000 |
+|  8 | jay     |  15000 |    180000 |
+|  9 | anand   |  15000 |    180000 |
+| 10 | ninad   |  25000 |    300000 |
+| 11 | satya   |  25000 |    300000 |
+| 12 | vikas   |  24000 |    288000 |
+| 13 | sid     |  24000 |    288000 |
+| 14 | vinayak |  24000 |    288000 |
+| 15 | kalpesh |  24000 |    288000 |
++----+---------+--------+-----------+
+
+q------------------------------ write a query to give alias name for all columns present in emplyeeinfo 
+
+
+mysql> select id,name,emailid,designation,mobilenumber,age,DOB,DOJ,salary,deptid,bloodgroup as ID,NAME,EMAILID,DESIGNATION,MOBILENUMBER,AGE,dob,doj,SALARY,DEPTID,BlOODGROUP from employeeinfo;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | ID   | NAME    | EMAILID           | DESIGNATION        | MOBILENUMBER | AGE  | dob        | doj        | SALARY | DEPTID | BlOODGROUP |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+   | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+   | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+   | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+   | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+   | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B    | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B    | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB   | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB   | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB   | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB   | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O    | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O    | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O    | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O    | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+
+
+------------------------------------------------------------------------------------------------------------------
+
+						distint
+
+q------------------- write query to display unique deptid from table
+
+mysql> select distinct deptid from employeeinfo;
++--------+
+| deptid |
++--------+
+|     10 |
+|     20 |
+|     30 |
+|     40 |
+|     50 |
+|     60 |
+|     70 |
+|     80 |
+|     90 |
+|    100 |
+|    110 |
+|    120 |
+|    130 |
+|    140 |
+|    150 |
++--------+
+
+q--------------- to display unique value of designation as well as departmnet id
+
+
+
+mysql>  select distinct designation,deptid from employeeinfo;
++--------------------+--------+
+| designation        | deptid |
++--------------------+--------+
+| software developer |     10 |
+| software developer |     20 |
+| HR                 |     30 |
+| software developer |     40 |
+| clerk              |     50 |
+| HR                 |     60 |
+| HR                 |     70 |
+| salesman           |     80 |
+| salesman           |     90 |
+| tester             |    100 |
+| tester             |    110 |
+| analyst            |    120 |
+| analyst            |    130 |
+| analyst            |    140 |
+| analyst            |    150 |
++--------------------+--------+
+15 rows in set (0.00 sec)
+
+
+q---------------- write a query to display deptid,designation,age
+
+mysql> select distinct deptid,designation,age from employeeinfo;
++--------+--------------------+------+
+| deptid | designation        | age  |
++--------+--------------------+------+
+|     10 | software developer |   21 |
+|     20 | software developer |   21 |
+|     30 | HR                 |   21 |
+|     40 | software developer |   21 |
+|     50 | clerk              |   22 |
+|     60 | HR                 |   22 |
+|     70 | HR                 |   21 |
+|     80 | salesman           |   22 |
+|     90 | salesman           |   21 |
+|    100 | tester             |   21 |
+|    110 | tester             |   21 |
+|    120 | analyst            |   21 |
+|    130 | analyst            |   21 |
+|    140 | analyst            |   21 |
+|    150 | analyst            |   21 |
++--------+--------------------+------+
+15 rows in set (0.00 sec)
+
+
+---------------------------------------------------------------------------------------------------
+						OPERATORS
+
+q---------------------- whose salary is increment by 5000,decrement salary by 5000,annual salary,display salary for per day
+
+
+mysql> select name,salary+5000 from employeeinfo;
++---------+-------------+
+| name    | salary+5000 |
++---------+-------------+
+| nikhil  |       33000 |
+| omkar   |       33000 |
+| sanket  |       31000 |
+| rahul   |       32000 |
+| sahil   |       19000 |
+| rohan   |       34000 |
+| pranesh |       34000 |
+| jay     |       20000 |
+| anand   |       20000 |
+| ninad   |       30000 |
+| satya   |       30000 |
+| vikas   |       29000 |
+| sid     |       29000 |
+| vinayak |       29000 |
+| kalpesh |       29000 |
++---------+-------------+
+15 rows in set (0.04 sec)
+
+mysql> select name,salary-5000 from employeeinfo;
++---------+-------------+
+| name    | salary-5000 |
++---------+-------------+
+| nikhil  |       23000 |
+| omkar   |       23000 |
+| sanket  |       21000 |
+| rahul   |       22000 |
+| sahil   |        9000 |
+| rohan   |       24000 |
+| pranesh |       24000 |
+| jay     |       10000 |
+| anand   |       10000 |
+| ninad   |       20000 |
+| satya   |       20000 |
+| vikas   |       19000 |
+| sid     |       19000 |
+| vinayak |       19000 |
+| kalpesh |       19000 |
++---------+-------------+
+15 rows in set (0.04 sec)
+
+mysql> select name,salary*12 from employeeinfo;
++---------+-----------+
+| name    | salary*12 | 
++---------+-----------+
+| nikhil  |    336000 |
+| omkar   |    336000 |
+| sanket  |    312000 |
+| rahul   |    324000 |
+| sahil   |    168000 |
+| rohan   |    348000 |
+| pranesh |    348000 |
+| jay     |    180000 |
+| anand   |    180000 |
+| ninad   |    300000 |
+| satya   |    300000 |
+| vikas   |    288000 |
+| sid     |    288000 |
+| vinayak |    288000 |
+| kalpesh |    288000 |
++---------+-----------+
+15 rows in set (0.00 sec)
+
+mysql> select name,salary/30 from employeeinfo;
++---------+-------------------+
+| name    | salary/30         |
++---------+-------------------+
+| nikhil  | 933.3333333333334 |
+| omkar   | 933.3333333333334 |
+| sanket  | 866.6666666666666 |
+| rahul   |               900 |
+| sahil   | 466.6666666666667 |
+| rohan   | 966.6666666666666 |
+| pranesh | 966.6666666666666 |
+| jay     |               500 |
+| anand   |               500 |
+| ninad   | 833.3333333333334 |
+| satya   | 833.3333333333334 |
+| vikas   |               800 |
+| sid     |               800 |
+| vinayak |               800 |
+| kalpesh |               800 |
++---------+-------------------+
+15 rows in set (0.00 sec)
+
+ERROR 1146 (42S02): Table 'ustglobal.empolyeeinfo' doesn't exist
+mysql> select name,10%3 as modulus from employeeinfo;
++---------+---------+
+| name    | modulus |
++---------+---------+
+| nikhil  |       1 |
+| omkar   |       1 |
+| sanket  |       1 |
+| rahul   |       1 |
+| sahil   |       1 |
+| rohan   |       1 |
+| pranesh |       1 |
+| jay     |       1 |
+| anand   |       1 |
+| ninad   |       1 |
+| satya   |       1 |
+| vikas   |       1 |
+| sid     |       1 |
+| vinayak |       1 |
+| kalpesh |       1 |
++---------+---------+
+
+------------------------------------------------------------------------------------------------
+
+				comparison operators
+
+q------------------- write a query to ddisplay all rrecords exculding department no 10
+
+
+mysql> select * from employeeinfo where deptid!=10;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+14 rows in set (0.03 sec)
+
+
+mysql> select * from employeeinfo where deptid<>10;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+14 rows in set (0.00 sec)
+
+q---------------------------------------- to display name,designation,mobilenumber age ehose salary greter then 5000
+
+
+mysql> select name,designation,mobilenumber,age from employeeinfo where salary>5000;
++---------+--------------------+--------------+------+
+| name    | designation        | mobilenumber | age  |
++---------+--------------------+--------------+------+
+| nikhil  | software developer |    965471225 |   21 |
+| omkar   | software developer |    965474525 |   21 |
+| sanket  | HR                 |    985671236 |   21 |
+| rahul   | software developer |    789753936 |   21 |
+| sahil   | clerk              |    785275396 |   22 |
+| rohan   | HR                 |    852753936 |   22 |
+| pranesh | HR                 |    842753936 |   21 |
+| jay     | salesman           |    852758936 |   22 |
+| anand   | salesman           |    842153936 |   21 |
+| ninad   | tester             |    982758936 |   21 |
+| satya   | tester             |    942113936 |   21 |
+| vikas   | analyst            |    945758936 |   21 |
+| sid     | analyst            |    842113936 |   21 |
+| vinayak | analyst            |    945758936 |   21 |
+| kalpesh | analyst            |    842178936 |   21 |
++---------+--------------------+--------------+------+
+15 rows in set (0.03 sec)
+
+q----------------- to display salary lessthan equal to 10000
+
+mysql> select name,designation,mobilenumber,age from employeeinfo where salary>=10000;
++---------+--------------------+--------------+------+
+| name    | designation        | mobilenumber | age  |
++---------+--------------------+--------------+------+
+| nikhil  | software developer |    965471225 |   21 |
+| omkar   | software developer |    965474525 |   21 |
+| sanket  | HR                 |    985671236 |   21 |
+| rahul   | software developer |    789753936 |   21 |
+| sahil   | clerk              |    785275396 |   22 |
+| rohan   | HR                 |    852753936 |   22 |
+| pranesh | HR                 |    842753936 |   21 |
+| jay     | salesman           |    852758936 |   22 |
+| anand   | salesman           |    842153936 |   21 |
+| ninad   | tester             |    982758936 |   21 |
+| satya   | tester             |    942113936 |   21 |
+| vikas   | analyst            |    945758936 |   21 |
+| sid     | analyst            |    842113936 |   21 |
+| vinayak | analyst            |    945758936 |   21 |
+| kalpesh | analyst            |    842178936 |   21 |
++---------+--------------------+--------------+------+
+15 rows in set (0.00 sec)
+
+mysql> select name,designation,mobilenumber,age from employeeinfo where salary<=10000;
+Empty set (0.00 sec)
+
+---------------------------------------------------------------------------------------------------------
+					logical operators
+
+q--------------------------- to display all record whose working in department no 20 and only if salary geater then 10000
+
+
+mysql> select * from employeeinfo where deptid=20 and salary>10000;
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+q------------------------------to display all records who is working as salesman and data ob birth is 1994
+
+
+mysql> select * from employeeinfo where designation='salesman' and DOB>'1997-01-01';
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  9 | anand | anand@gmail.com | salesman    |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+q----------------- to display all records of employeeinfo table whose salary=24000 as well as job designation is analyst
+
+
+
+mysql> select * from employeeinfo where  salary=24000 and designation='analyst';
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| 12 | vikas   | vikas@gmail.com   | analyst     |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst     |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst     |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst     |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+4 rows in set (0.00 sec)
+
+q------------------------------------------ to display all records whose workong in deptid=20 or dept id=60
+
+
+mysql> select * from employeeinfo where  deptid=20 or deptid=60;
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  6 | rohan | rohan@gmail.com | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+
+q---------------------- to display name,salary,emailid who is working as a tester or age is greater then 20
+
+mysql> select name,emailid,salary from employeeinfo where designation='tester' or age>20;
++---------+-------------------+--------+
+| name    | emailid           | salary |
++---------+-------------------+--------+
+| nikhil  | nikhil@gmail.com  |  28000 |
+| omkar   | omkar@gmail.com   |  28000 |
+| sanket  | sanket@gmail.com  |  26000 |
+| rahul   | rahul@gmail.com   |  27000 |
+| sahil   | sahil@gmail.com   |  14000 |
+| rohan   | rohan@gmail.com   |  29000 |
+| pranesh | pranesh@gmail.com |  29000 |
+| jay     | jay@gmail.com     |  15000 |
+| anand   | anand@gmail.com   |  15000 |
+| ninad   | ninad@gmail.com   |  25000 |
+| satya   | satya@gmail.com   |  25000 |
+| vikas   | vikas@gmail.com   |  24000 |
+| sid     | sid@gmail.com     |  24000 |
+| vinayak | vinayak@gmail.com |  24000 |
+| kalpesh | kalpesh@gmail.com |  24000 |
++---------+-------------------+--------+
+15 rows in set (0.00 sec)
+
+
+q--------- to display name of all employee who is Hr in deptno 30 or clerk salary is greater then 10000
+
+mysql> select * from employeeinfo where (designation='HR' and deptid=30) or (designation='clerk' and salary>10000);
++----+--------+------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  3 | sanket | sanket@gmail.com | HR          |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  5 | sahil  | sahil@gmail.com  | clerk       |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
++----+--------+------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+2 rows in set (0.00 sec)
+
+q---------------------------to display salary=10000 and designation softdevloper
+
+mysql> select * from employeeinfo where designation='software developer' and salary=10000;
+Empty set (0.00 sec)
+
+					Not OPERATOR
+
+q---------------------------------- 
+
+mysql> select * from employeeinfo where NOT designation='software developer' ;
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  3 | sanket  | sanket@gmail.com  | HR          |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk       |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR          |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR          |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman    |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman    |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester      |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester      |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst     |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst     |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst     |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst     |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+12 rows in set (0.04 sec)
+
+Q======================= to display all employee excluding deptid=20 or 30
+
+mysql> select * from employeeinfo where NOT deptid=20 or deptid=30;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+14 rows in set (0.00 sec)
+
+q---------------------------------to display all employeedetails excluding salesman all are working in deptid=40
+
+mysql> select * from employeeinfo where NOT (designation='salesman' and  deptid=40);
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+12 rows in set (0.00 sec)
+
+q------------------ all employedetails working as a salesman for deptno=20 or 30
+
+mysql> select * from employeeinfo where  designation='salesman' and  (deptid=20 or deptid=30);
+Empty set (0.00 sec)
+
+q-------------------- to display all employee working in depid=20 if salary is >=10000 and <=25000 
+
+mysql> select * from employeeinfo where  deptid=20 and (salary>=10000 and salary<=25000);
+Empty set (0.00 sec)
+
+q==================== to display all records who is working as software dev and dob is 1994
+
+mysql> select * from employeeinfo where designation='software developer' and DOB>1993-12-31;
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul  | rahul@gmail.com  | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+3 rows in set, 1 warning (0.06 sec)
+
+q------------- to display employee who is working in department no 10 or 20 or 30
+
+mysql> select * from employeeinfo where deptid=10 or deptid=20 or deptid=30;
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+
+--------------------------------------------------------------------------------------------------------------------------
+				special operators
+
+q--------------------to display employee who is working in department no 10 or 20 or 30
+
+
+mysql> select * from employeeinfo where deptid in(10,20,30);
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.29 sec)
+
+
+q----------- to display all employeedetails whose job desinnation is testr hr and analyst
+
+
+mysql> select * from employeeinfo where designation in('tester','HR','analyst');
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  3 | sanket  | sanket@gmail.com  | HR          |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR          |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR          |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+| 10 | ninad   | ninad@gmail.com   | tester      |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester      |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst     |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst     |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst     |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst     |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+9 rows in set (0.00 sec)
+
+q------------------------- to display all employeedetails who are working as a clerk in dept 20,30,40,60,70
+
+
+mysql> select * from employeeinfo where designation='clerk' and deptid in(20,30,40,60,70);
+Empty set (0.00 sec)
+
+q--------------------------------to display all employeedetails who are working as a clerk in excluding dept 20,30,40,60,70
+
+
+mysql> select * from employeeinfo where designation='clerk' and deptid not in(20,30,40,60,70);
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  5 | sahil | sahil@gmail.com | clerk       |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+q-------------------- to display all details of employee who are working in department 20,40,60 excluding salesman or analyst
+
+mysql> select * from employeeinfo where deptid in(20,40,60) and  designation not in('salesman','analyst');
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul | rahul@gmail.com | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  6 | rohan | rohan@gmail.com | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.00 sec)
+
+
+q--------------------------- to display all detals of employee whose salary is in range of 20000 to 500000
+
+mysql> select * from employeeinfo where salary between 20000 and 50000;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+12 rows in set (0.00 sec)
+
+
+q--------------------- write a query to display all the details of employeee who hired doj 2017
+
+mysql> select * from employeeinfo where DOJ BETWEEN '2017-01-01' and '2017-12-31';
+Empty set (0.00 sec)
+
+q------------------ all record of employee excluding who is hired in 2019
+
+
+mysql> select * from employeeinfo where DOJ not BETWEEN '2019-01-01' and '2019-12-31';
+Empty set (0.00 sec)
+
+q=-------------------------- to display employeename salary and department id of all employees workin in deptid 10,20 exluding employeesalary is greaterthen == 15000 and salary lessthan==50000
+
+mysql> select name,salary,deptid from employeeinfo where deptid between 10 and 20 and salary not between 15000 and 50000;
+Empty set (0.02 sec)
+
+q-------- to display employeename annual salary if designation is null
+
+mysql> select name,salary from employeeinfo where designation is null;
++-------+--------+
+| name  | salary |
++-------+--------+
+| rahul |   NULL |
++-------+--------+
+1 row in set (0.00 sec)
+
+q----------to display employeename annual salary if designation is not null
+
+mysql> select name,salary from employeeinfo where designation is not null;
++---------+--------+
+| name    | salary |
++---------+--------+
+| nikhil  |  28000 |
+| omkar   |  28000 |
+| sanket  |  26000 |
+| rahul   |  27000 |
+| sahil   |  14000 |
+| rohan   |  29000 |
+| pranesh |  29000 |
+| jay     |  15000 |
+| anand   |  15000 |
+| ninad   |  25000 |
+| satya   |  25000 |
+| vikas   |  24000 |
+| sid     |  24000 |
+| vinayak |  24000 |
+| kalpesh |  24000 |
++---------+--------+
+15 rows in set (0.00 sec)
+
+				like operator
+
+Q---------------- TODISPLAY ALL DETAILS OF EMPLOYE WHOSE NAME START WITH S
+
+
+mysql> select name,salary from employeeinfo where name like's%';
++--------+--------+
+| name   | salary |
++--------+--------+
+| sanket |  26000 |
+| sahil  |  14000 |
+| satya  |  25000 |
+| sid    |  24000 |
++--------+--------+
+4 rows in set (0.00 sec)
+
+q----------------- to display alldetails of employee whose name contains only 5 character
+
+
+mysql> select * from employeeinfo where name like'_____';
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul | rahul@gmail.com | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil | sahil@gmail.com | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan | rohan@gmail.com | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  9 | anand | anand@gmail.com | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad | ninad@gmail.com | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya | satya@gmail.com | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas | vikas@gmail.com | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 16 | rahul | NULL            | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+9 rows in set (0.00 sec)
+
+
+q--- to display name,salary,dob,doj age,salary whose name starts with s and ends with s
+
+mysql> select name,salary,dob,doj,age,salary from employeeinfo where name like's%s';
+Empty set (0.00 sec)
+
+q=---------- to display all records of employee whose secon character is m
+
+
+mysql> select * from employeeinfo where name like'_m%';
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+q----- to display  all info where designation have atleast 2 ee
+
+Database changed
+mysql> select * from employeeinfo where designation like '%e%e%';
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul  | rahul@gmail.com  | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya  | satya@gmail.com  | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+5 rows in set (0.00 sec)
+
+q--------------select all string of lenghth 5 and second last character of strinfg is l and first character is s
+
+mysql> select * from employeeinfo where name like's__l_';
+Empty set (0.00 sec)
+
+q------------ to display all details of employee if name of employee start with n or s character
+
+mysql> select * from employeeinfo where name like'n%' or  name like's%';
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  5 | sahil  | sahil@gmail.com  | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya  | satya@gmail.com  | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 13 | sid    | sid@gmail.com    | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+6 rows in set (0.00 sec)
+
+q---------------------- to display all records of employee whose names 3 character should be c and 6 character should be i
+
+
+mysql> select * from employeeinfo where name like'__c__i%';
+Empty set (0.00 sec)
+
+q=========== to display all record in aemployee whose name start with a 
+
+
+mysql> select * from employeeinfo where name like'a%';
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+|  9 | anand | anand@gmail.com | salesman    |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
++----+-------+-----------------+-------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+mysql> select * from employeeinfo where name not like'a%';
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+15 rows in set (0.00 sec)
+
+--------------------------------------------------------------------------------------------
+
+					function
+
+q--------- display average salary of employeeinfo
+
+
+mysql> select avg(salary) from employeeinfo;
++-------------+
+| avg(salary) |
++-------------+
+|       23800 |
++-------------+
+1 row in set (0.06 sec)
+
+q--------- to dislplay min,max,sum of all salary
+
+
+mysql> select min(salary) from employeeinfo;
++-------------+
+| min(salary) |
++-------------+
+|       14000 |
++-------------+
+1 row in set (0.03 sec)
+
+mysql> select max(salary) from employeeinfo;
++-------------+
+| max(salary) |
++-------------+
+|       29000 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select sum(salary) from employeeinfo;
++-------------+
+| sum(salary) |
++-------------+
+|      357000 |
++-------------+
+1 row in set (0.00 sec)
+
+
+mysql> select count(salary) from employeeinfo;
++---------------+
+| count(salary) |
++---------------+
+|            15 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> select avg(salary) average,min(salary)  minimum,max(salary) maximum,count(salary) ,sum(salary)  from employeeinfo;
++---------+---------+---------+---------------+-------------+
+| average | minimum | maximum | count(salary) | sum(salary) |
++---------+---------+---------+---------------+-------------+
+|   23800 |   14000 |   29000 |            15 |      357000 |
++---------+---------+---------+---------------+-------------+
+1 row in set (0.00 sec)
+
+q-------- display no of employeees hired doj after 2016
+
+
+mysql> select count(*) from employeeinfo where DOJ>2016;
++----------+
+| count(*) |
++----------+
+|       16 |
++----------+
+1 row in set, 1 warning (0.05 sec)
+
+
+q------- to display date of first and last hired employeee
+
+mysql> select max(DOJ) firstemployee ,min(DOJ) lastemployee FROM employeeinfo;
++---------------+--------------+
+| firstemployee | lastemployee |
++---------------+--------------+
+| 2019-11-24    | 2019-01-04   |
++---------------+--------------+
+1 row in set (0.00 sec)
+
+----------------------------------------------------------------------------------------------------------
+
+					scalar function
+
+q-----------------for lowercase
+
+
+mysql> select lower(name) from employeeinfo;
++-------------+
+| lower(name) |
++-------------+
+| nikhil      |
+| omkar       |
+| sanket      |
+| rahul       |
+| sahil       |
+| rohan       |
+| pranesh     |
+| jay         |
+| anand       |
+| ninad       |
+| satya       |
+| vikas       |
+| sid         |
+| vinayak     |
+| kalpesh     |
+| rahul       |
++-------------+
+
+q------------- for upper
+
+
+mysql> select upper(name) from employeeinfo;
++-------------+
+| upper(name) |
++-------------+
+| NIKHIL      |
+| OMKAR       |
+| SANKET      |
+| RAHUL       |
+| SAHIL       |
+| ROHAN       |
+| PRANESH     |
+| JAY         |
+| ANAND       |
+| NINAD       |
+| SATYA       |
+| VIKAS       |
+| SID         |
+| VINAYAK     |
+| KALPESH     |
+| RAHUL       |
++-------------+
+16 rows in set (0.00 sec)
+
+q--------------------for lrngth
+
+mysql> select length(name) from employeeinfo;
++--------------+
+| length(name) |
++--------------+
+|            6 |
+|            5 |
+|            6 |
+|            5 |
+|            5 |
+|            5 |
+|            7 |
+|            3 |
+|            5 |
+|            5 |
+|            5 |
+|            5 |
+|            3 |
+|            7 |
+|            7 |
+|            5 |
++--------------+
+16 rows in set (0.03 sec)
+
+q---------------- to merge name and salary
+
+mysql> select concat(name,salary)name_salary from employeeinfo;
++--------------+
+| name_salary  |
++--------------+
+| nikhil28000  |
+| omkar28000   |
+| sanket26000  |
+| rahul27000   |
+| sahil14000   |
+| rohan29000   |
+| pranesh29000 |
+| jay15000     |
+| anand15000   |
+| ninad25000   |
+| satya25000   |
+| vikas24000   |
+| sid24000     |
+| vinayak24000 |
+| kalpesh24000 |
+| NULL         |
++--------------+
+16 rows in set (0.00 sec)
+
+q-----------------to reverse
+
+mysql> select reverse(name) reverse_name from employeeinfo;
++--------------+
+| reverse_name |
++--------------+
+| lihkin       |
+| rakmo        |
+| teknas       |
+| luhar        |
+| lihas        |
+| nahor        |
+| hsenarp      |
+| yaj          |
+| dnana        |
+| danin        |
+| aytas        |
+| sakiv        |
+| dis          |
+| kayaniv      |
+| hseplak      |
+| luhar        |
++--------------+
+16 rows in set (0.00 sec)
+
+q------------ to display name of all employees only three character
+
+mysql> select substr(name,1,3) from employeeinfo;
++------------------+
+| substr(name,1,3) |
++------------------+
+| nik              |
+| omk              |
+| san              |
+| rah              |
+| sah              |
+| roh              |
+| pra              |
+| jay              |
+| ana              |
+| nin              |
+| sat              |
+| vik              |
+| sid              |
+| vin              |
+| kal              |
+| rah              |
++------------------+
+16 rows in set (0.00 sec)
+
+q---- to display all employees whose name begins with consonent
+
+mysql> select * from employeeinfo where substr(name,1,1) not in('a','e','i','o','u');
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+14 rows in set (0.00 sec)
+
+
+q------------------ to search postion of a in the name column
+
+
+mysql> select instr(name,'a') from employeeinfo;
++-----------------+
+| instr(name,'a') |
++-----------------+
+|               0 |
+|               4 |
+|               2 |
+|               2 |
+|               2 |
+|               4 |
+|               3 |
+|               2 |
+|               1 |
+|               4 |
+|               2 |
+|               4 |
+|               0 |
+|               4 |
+|               2 |
+|               2 |
++-----------------+
+
+q------------ to replace
+
+mysql> select replace(name,'n','a') from employeeinfo;
++-----------------------+
+| replace(name,'n','a') |
++-----------------------+
+| aikhil                |
+| omkar                 |
+| saaket                |
+| rahul                 |
+| sahil                 |
+| rohaa                 |
+| praaesh               |
+| jay                   |
+| aaaad                 |
+| aiaad                 |
+| satya                 |
+| vikas                 |
+| sid                   |
+| viaayak               |
+| kalpesh               |
+| rahul                 |
++-----------------------+
+16 rows in set (0.00 sec)
+
+q----- to replace where a is present in name with z
+
+mysql> select replace(name,'a','z') from employeeinfo;
++-----------------------+
+| replace(name,'a','z') |
++-----------------------+
+| nikhil                |
+| omkzr                 |
+| sznket                |
+| rzhul                 |
+| szhil                 |
+| rohzn                 |
+| prznesh               |
+| jzy                   |
+| znznd                 |
+| ninzd                 |
+| sztyz                 |
+| vikzs                 |
+| sid                   |
+| vinzyzk               |
+| kzlpesh               |
+| rzhul                 |
++-----------------------+
+16 rows in set (0.00 sec)
+
+
+q---------------- to dislplay no of employee whos is workind in dept no 20 and salary is > 15000
+
+mysql> select count(*) from employeeinfo where deptid in(20) and salary>15000;
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+q===========to display highest salary of employee in each department
+
+
+m
+mysql> select name,designation,max(salary) from employeeinfo group by designation;
++--------+--------------------+-------------+
+| name   | designation        | max(salary) |
++--------+--------------------+-------------+
+| rahul  | NULL               |        NULL |
+| vikas  | analyst            |       24000 |
+| sahil  | clerk              |       14000 |
+| sanket | HR                 |       29000 |
+| jay    | salesman           |       15000 |
+| nikhil | software developer |       28000 |
+| ninad  | tester             |       25000 |
++--------+--------------------+-------------+
+7 rows in set (0.00 sec)
+
+
+q-------------- to display number of software developer working in each deparment
+
+
+
+mysql> select count(*) from employeeinfo where designation='software developer' group by deptid;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        1 |
++----------+
+3 rows in set (0.00 sec)
+
+q------------ to display  no of employee add on each date
+
+
+mysql> select count(*) from employeeinfo group by DOJ;
++----------+
+| count(*) |
++----------+
+|        1 |
+|        1 |
+|        4 |
+|        1 |
+|        2 |
+|        1 |
+|        1 |
+|        1 |
+|        2 |
+|        2 |
++----------+
+10 rows in set (0.00 sec)
+
+Q---------TO display min salary in each designaton
+
+mysql> select  min(salary) from employeeinfo group by designation;
++-------------+
+| min(salary) |
++-------------+
+|        NULL |
+|       24000 |
+|       14000 |
+|       26000 |
+|       15000 |
+|       27000 |
+|       25000 |
++-------------+
+7 rows in set (0.00 sec) 
+
+
+----------------------------------------------------------------------------------------------------------
+
+					having clause
+
+q------------ display employee which has minimum 4 employ
+
+
+mysql> select deptid from employeeinfo  group by deptid having count(*) > 4;
+Empty set (0.00 sec)
+
+q------------------- to display departmenet no which has total salary greater then 20000
+mysql> select deptid from employeeinfo  group by deptid having sum(salary) > 20000;
++--------+
+| deptid |
++--------+
+|     10 |
+|     20 |
+|     30 |
+|     40 |
+|     60 |
+|     70 |
+|    100 |
+|    110 |
+|    120 |
+|    130 |
+|    140 |
+|    150 |
++--------+
+12 rows in set (0.00 sec)
+
+q-------- to display deptid,avg salary ofall departments whose average salary is >20000 excluding employee whose name begins with s
+
+
+mysql> select deptid,avg(salary) from employeeinfo where not name like('s%') group by deptid having sum(salary) > 20000
+    -> ;
++--------+-------------+
+| deptid | avg(salary) |
++--------+-------------+
+|     10 |       28000 |
+|     20 |       28000 |
+|     40 |       27000 |
+|     60 |       29000 |
+|     70 |       29000 |
+|    100 |       25000 |
+|    120 |       24000 |
+|    140 |       24000 |
+|    150 |       24000 |
++--------+-------------+
+9 rows in set (0.00 sec)
+
+-------------------------------------------------------------------------------------------------------------------
+
+					orderby
+
+Q-------------------- to dispaly all th results of employeeinfo table salary should be arrange in descending order
+
+
+mysql> select * from employeeinfo order by salary desc;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+16 rows in set (0.00 sec)
+
+
+for ascending
+
+
+mysql> select * from employeeinfo order by salary ;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+16 rows in set (0.00 sec)
+16 rows in set (0.00 sec)
+
+
+q============== to display name,designation,doj for all employees who are working in either one of the department 10,20,50,60 and sort records in desc order of salary
+
+mysql> select name,designation,DOJ from employeeinfo where deptid in(10,20,50,60)   order by salary desc;
++--------+--------------------+------------+
+| name   | designation        | DOJ        |
++--------+--------------------+------------+
+| rohan  | HR                 | 2019-01-14 |
+| nikhil | software developer | 2019-05-01 |
+| omkar  | software developer | 2019-05-01 |
+| sahil  | clerk              | 2019-04-14 |
++--------+--------------------+------------+
+
+
+4 rows in set (0.00 sec)
+
+q------------ to display deptid,no of employee in it
+
+
+mysql> select deptid,count(name) from employeeinfo;
++--------+-------------+
+| deptid | count(name) |
++--------+-------------+
+|     10 |          16 |
++--------+-------------+
+1 row in set (0.00 sec)
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+					sqlyog
+
+q---------- to display all details of employee whose designation is software developer,tester
+
+---------------------------------------------------------------------------------------------------------
+
+q--------------- name of employee who is working for reserach deprtment
+
+SELECT name from employeeinfo where deptid=(select deptid from department_info where departmentname='research')
+
+omkar
+
+q------ write a query to display name of employee ehos is working in location which has atleast 1 a character in its name
+
+
+SELECT name from employeeinfo where deptid in(select deptid from department_info where location like'%a%')
+
+
+q----------- to obtain 2nd max salary from employeeinfo
+
+
+
+select max(salary) from employeeinfo WHERE salary <(select max(salary) from employeeinfo)
+
+
+q------------ to display third maximum salary
+
+
+select max(salary) from employeeinfo WHERE salary <(select max(salary) from employeeinfo where salary < (select max(salary) from employeeinfo))
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+			joins
+
+q------------ to display all records using cross joins
+
+
+select * from employeeinfo cross JOIN department_info
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+					query for innerjoin
+
+
+mysql> select * from employeeinfo inner join department_info on name like 'n%'
+    -> ;
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup | deptid | departmentname | location |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     10 | accounting     | banglore |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     10 | accounting     | banglore |
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     20 | research       | pune     |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     20 | research       | pune     |
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     30 | sales          | delhi    |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     30 | sales          | delhi    |
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     40 | operation      | chennai  |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     40 | operation      | chennai  |
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     50 | admin          | mumbai   |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     50 | admin          | mumbai   |
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     60 | maintainance   | kolkata  |
+| 10 | ninad  | ninad@gmail.com  | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |     60 | maintainance   | kolkata  |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+12 rows in set (0.00 sec)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+mysql> select * from employeeinfo inner join department_info on employeeinfo.deptid =  department_info.deptid
+    -> ;
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup | deptid | departmentname | location |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     10 | accounting     | banglore |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |     20 | research       | pune     |
+|  3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |     30 | sales          | delhi    |
+|  4 | rahul  | rahul@gmail.com  | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |     40 | operation      | chennai  |
+|  5 | sahil  | sahil@gmail.com  | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |     50 | admin          | mumbai   |
+|  6 | rohan  | rohan@gmail.com  | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |     60 | maintainance   | kolkata  |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+6 rows in set (0.00 sec)
+
+
+						query for left outer join
+
+mysql> select * from employeeinfo left outer join department_info on employeeinfo.deptid =  department_info.deptid;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup | deptid | departmentname | location |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     10 | accounting     | banglore |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |     20 | research       | pune     |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |     30 | sales          | delhi    |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |     40 | operation      | chennai  |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |     50 | admin          | mumbai   |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |     60 | maintainance   | kolkata  |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |   NULL | NULL           | NULL     |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |   NULL | NULL           | NULL     |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |   NULL | NULL           | NULL     |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |   NULL | NULL           | NULL     |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |   NULL | NULL           | NULL     |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |   NULL | NULL           | NULL     |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |   NULL | NULL           | NULL     |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |   NULL | NULL           | NULL     |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |   NULL | NULL           | NULL     |
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |   NULL | NULL           | NULL     |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+16 rows in set (0.01 sec)
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+
+					query for right outer join
+
+mysql> select * from employeeinfo right outer join department_info on employeeinfo.deptid =  department_info.deptid;
++------+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+| id   | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup | deptid | departmentname | location |
++------+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+|    1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     10 | accounting     | banglore |
+|    2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |     20 | research       | pune     |
+|    3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |     30 | sales          | delhi    |
+|    4 | rahul  | rahul@gmail.com  | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |     40 | operation      | chennai  |
+|    5 | sahil  | sahil@gmail.com  | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |     50 | admin          | mumbai   |
+|    6 | rohan  | rohan@gmail.com  | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |     60 | maintainance   | kolkata  |
++------+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+6 rows in set (0.00 sec)
+
+					query for outerjoin
+
+mysql> select * from employeeinfo left outer join department_info on employeeinfo.deptid =  department_info.deptid union
+    ->
+    -> select * from employeeinfo right outer join department_info on employeeinfo.deptid =  department_info.deptid
+    -> ;
++------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+| id   | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup | deptid | departmentname | location |
++------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+|    1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |     10 | accounting     | banglore |
+|    2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |     20 | research       | pune     |
+|    3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |     30 | sales          | delhi    |
+|    4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |     40 | operation      | chennai  |
+|    5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |     50 | admin          | mumbai   |
+|    6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |     60 | maintainance   | kolkata  |
+|    7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |   NULL | NULL           | NULL     |
+|    8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |   NULL | NULL           | NULL     |
+|    9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |   NULL | NULL           | NULL     |
+|   10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |   NULL | NULL           | NULL     |
+|   11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |   NULL | NULL           | NULL     |
+|   12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |   NULL | NULL           | NULL     |
+|   13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |   NULL | NULL           | NULL     |
+|   14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |   NULL | NULL           | NULL     |
+|   15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |   NULL | NULL           | NULL     |
+|   16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |   NULL | NULL           | NULL     |
++------+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+--------+----------------+----------+
+16 rows in set (0.00 sec)
+
+						to make autocommit false
+
+mysql> set autoCommit=0;
+Query OK, 0 rows affected (0.00 sec)
+
+and then use rollback;
+
+					to savepoint
+
+
+mysql> savepoint x;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> insert into department_info values(90,'management','kochi');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select * from department_info;
++--------+----------------+----------+
+| deptid | departmentname | location |
++--------+----------------+----------+
+|     10 | accounting     | banglore |
+|     20 | research       | pune     |
+|     30 | sales          | delhi    |
+|     40 | operation      | chennai  |
+|     50 | admin          | mumbai   |
+|     60 | maintainance   | kolkata  |
+|     70 | management     | kochi    |
+|     80 | management     | kochi    |
+|     90 | management     | kochi    |
++--------+----------------+----------+
+9 rows in set (0.00 sec)
+
+mysql> savepoint y;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> delete from department_info where deptid=90;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> select * from department_info;
++--------+----------------+----------+
+| deptid | departmentname | location |
++--------+----------------+----------+
+|     10 | accounting     | banglore |
+|     20 | research       | pune     |
+|     30 | sales          | delhi    |
+|     40 | operation      | chennai  |
+|     50 | admin          | mumbai   |
+|     60 | maintainance   | kolkata  |
+|     70 | management     | kochi    |
+|     80 | management     | kochi    |
++--------+----------------+----------+
+8 rows in set (0.00 sec)
+
+mysql> rollback to a;
+ERROR 1305 (42000): SAVEPOINT a does not exist
+mysql> rollback to x;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select * from department_info;
++--------+----------------+----------+
+| deptid | departmentname | location |
++--------+----------------+----------+
+|     10 | accounting     | banglore |
+|     20 | research       | pune     |
+|     30 | sales          | delhi    |
+|     40 | operation      | chennai  |
+|     50 | admin          | mumbai   |
+|     60 | maintainance   | kolkata  |
+|     70 | management     | kochi    |
+|     80 | management     | kochi    |
++--------+----------------+----------+
+8 rows in set (0.00 sec)

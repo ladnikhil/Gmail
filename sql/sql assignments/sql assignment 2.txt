@@ -1,0 +1,161 @@
+
+1-------------------waq to display all software developer in deptid=20
+
+
+mysql> select * from employeeinfo where designation='software developer' and deptid=20;
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  2 | omkar | omkar@gmail.com | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+
+
+2------------------waq to display all software developer in deptid=20 and havimg salary greater then 5000
+
+
+mysql> select * from employeeinfo where designation='software developer' and deptid=40 and salary>5000;
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name  | emailid         | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  4 | rahul | rahul@gmail.com | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
++----+-------+-----------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+1 row in set (0.00 sec)
+
+
+
+3---------------- waq to display all employees except not working in deptid 10 and 20
+
+mysql> select * from employeeinfo where deptid not in(10,20);
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+13 rows in set (0.00 sec)
+
+
+
+
+4-------------------waq display all employees who are not working as software developer and clerk in dept 10,20 with salary in range 1000 to 3000
+
+
+mysql> select * from employeeinfo where designation not in('software developer','clerk') and deptid not in(10,20) and salary between 1000 and 5000;
+Empty set (0.00 sec)
+
+
+
+
+
+
+5--------------- waq to display list of employees where salary is not in range of 10000 to 20000 in dept id 10,20,30 except all salesman
+
+
+mysql> select * from employeeinfo where salary not between 10000 and 20000 and deptid in(10,20,30) and not designation='salesman';
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name   | emailid          | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  1 | nikhil | nikhil@gmail.com | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar  | omkar@gmail.com  | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  3 | sanket | sanket@gmail.com | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
++----+--------+------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+3 rows in set (0.04 sec)
+
+
+
+
+6--------------------waq to arrange all employess by salary in descending order
+
+mysql> select * from employeeinfo order by salary desc;
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+| id | name    | emailid           | designation        | mobilenumber | age  | DOB        | DOJ        | salary | deptid | bloodgroup |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+|  6 | rohan   | rohan@gmail.com   | HR                 |    852753936 |   22 | 1996-05-25 | 2019-01-14 |  29000 |     60 | B          |
+|  7 | pranesh | pranesh@gmail.com | HR                 |    842753936 |   21 | 1997-05-25 | 2019-06-24 |  29000 |     70 | B          |
+|  1 | nikhil  | nikhil@gmail.com  | software developer |    965471225 |   21 | 1997-12-26 | 2019-05-01 |  28000 |     10 | A+         |
+|  2 | omkar   | omkar@gmail.com   | software developer |    965474525 |   21 | 1997-10-26 | 2019-05-01 |  28000 |     20 | A+         |
+|  4 | rahul   | rahul@gmail.com   | software developer |    789753936 |   21 | 1997-10-26 | 2019-05-12 |  27000 |     40 | A+         |
+|  3 | sanket  | sanket@gmail.com  | HR                 |    985671236 |   21 | 1997-08-12 | 2019-05-15 |  26000 |     30 | A+         |
+| 10 | ninad   | ninad@gmail.com   | tester             |    982758936 |   21 | 1997-07-10 | 2019-11-24 |  25000 |    100 | AB         |
+| 11 | satya   | satya@gmail.com   | tester             |    942113936 |   21 | 1997-06-25 | 2019-01-14 |  25000 |    110 | AB         |
+| 12 | vikas   | vikas@gmail.com   | analyst            |    945758936 |   21 | 1997-06-10 | 2019-11-04 |  24000 |    120 | O          |
+| 13 | sid     | sid@gmail.com     | analyst            |    842113936 |   21 | 1997-06-20 | 2019-01-14 |  24000 |    130 | O          |
+| 14 | vinayak | vinayak@gmail.com | analyst            |    945758936 |   21 | 1997-02-10 | 2019-11-04 |  24000 |    140 | O          |
+| 15 | kalpesh | kalpesh@gmail.com | analyst            |    842178936 |   21 | 1997-04-20 | 2019-01-04 |  24000 |    150 | O          |
+|  8 | jay     | jay@gmail.com     | salesman           |    852758936 |   22 | 1996-05-25 | 2019-11-24 |  15000 |     80 | AB         |
+|  9 | anand   | anand@gmail.com   | salesman           |    842153936 |   21 | 1997-05-25 | 2019-01-14 |  15000 |     90 | AB         |
+|  5 | sahil   | sahil@gmail.com   | clerk              |    785275396 |   22 | 1996-10-25 | 2019-04-14 |  14000 |     50 | A+         |
+| 16 | rahul   | NULL              | NULL               |         NULL | NULL | 1997-02-14 | 2019-01-10 |   NULL |   NULL | 21         |
++----+---------+-------------------+--------------------+--------------+------+------------+------------+--------+--------+------------+
+16 rows in set (0.44 sec)
+
+
+7--------------------waq to display max,min and total salary of employee
+
+mysql> select min(salary) minimum,max(salary) maximum,sum(salary) total from employeeinfo;
++---------+---------+--------+
+| minimum | maximum | total  |
++---------+---------+--------+
+|   14000 |   29000 | 357000 |
++---------+---------+--------+
+1 row in set (0.07 sec)
+
+
+
+
+8---------------------------waq to display list of highest and lowest salary earned by salesman
+
+mysql> select min(salary) minimum,max(salary) maximum,sum(salary) total from employeeinfo;
++---------+---------+--------+
+| minimum | maximum | total  |
++---------+---------+--------+
+|   14000 |   29000 | 357000 |
++---------+---------+--------+
+1 row in set (0.07 sec)
+
+
+
+
+9----------------------------waq to dislplay list of number of software developers in dept id =20
+
+
+mysql> select count('software developer') count from employeeinfo where deptid = 20;
++-------+
+| count |
++-------+
+|     1 |
++-------+
+1 row in set (0.00 sec)
+
+
+
+
+10----------------------------------waq to display total salary of all departmnts
+
+mysql> select sum(salary) totalsalary from employeeinfo;
++-------------+
+| totalsalary |
++-------------+
+|      357000 |
++-------------+
+1 row in set (0.00 sec)
+
+
+
+
+
+
