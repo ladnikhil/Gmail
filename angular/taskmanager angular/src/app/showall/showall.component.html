@@ -1,0 +1,23 @@
+<table class="table table-hover"  >
+    <thead>
+        <tr>
+            <th>taskid</th>
+            <th>task</th>
+            <th>taskstartdate</th>
+            <th>taskenddate</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor = 'let g of getall'>
+            <td>{{g.taskid}}</td>
+            <td>{{g.task}}</td>
+            <td>{{g.taskstartdate}}</td>
+            <td>{{g.taskenddate}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+
+

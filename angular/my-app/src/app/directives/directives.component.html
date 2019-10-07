@@ -1,0 +1,36 @@
+<div class="container">
+    <div *ngIf="condition" class="alert alert-success"> username removed successfully
+    <button class="alert alert-success" (click)='cut()'>close</button></div>
+<div class="col-md-4 offset-4 mt-5">
+    <ul>
+        <li *ngFor='let i of users'>{{i.name}}
+
+        </li>
+    </ul>
+</div>
+
+<table class="table mt-5 table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th >id </th>
+            <th >name</th>
+            <th >city</th>
+            <th>delete</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let j of users'>
+            <td class="bg-primary">{{j.id}}</td>
+            <td class="bg-info">{{j.name}}</td>
+            <td class="bg-success">{{j.city}}</td>
+            <td><button class="btn btn-outline-danger"
+                (click)='removeuser(j)'>Remove</button></td>
+             
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<!-- <div *ngIf='condition'> condition is true
+
+</div> -->

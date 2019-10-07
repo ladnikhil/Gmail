@@ -1,0 +1,24 @@
+
+
+<img src="{{imgurl}}" alt="">
+
+
+<img [src]="imgurl" alt="">
+
+
+<h1 [class.bg-danger]="isapplicable">
+    hello world
+</h1>
+
+<h1 [style.color]="style">nikhil</h1>
+
+<h1 [ngStyle]="{'color':red}">lad</h1>
+
+<h1 [ngClass]="{'bg-success' : isapplicable}">done</h1>
+
+
+
+<input type="text" [(ngModel)]="search">
+<h1>{{search}}</h1>
+
+<button type="button" class="btn btn-outline-primary" (click)="click()">click me</button>

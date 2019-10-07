@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="col-md-6 offset-md-3 card card-body mt-5">
+        
+        <form action="#" method="POST" #loginform = 'ngForm' (ngSubmit) = 'printform(loginform)' >     <!--here we used ngform as it takes all form data n reference variable-->
+            <legend class="text-center">Register Form</legend>                 <!--it contains title of form-->
+        
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" name="username" placeholder="Username" #username = 'ngModel' ngModel required minlength="5">
+                <!-- here we have used ngMpdel for binding template reference variable-->
+            </div>
+
+            <!--below is form validation for username-->
+            <div *ngIf="username.invalid && username.touched">
+                <div class="alert alert-danger" *ngIf="username.errors.required">field is required here</div>
+                <div class="alert alert-danger" *ngIf="username.errors.minlength">minlength is 5</div>
+                <!-- here we have used ngModel for binding template reference variable-->
+            </div>
+
+            <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" name="password" placeholder="Password" #password = 'ngModel' ngModel required minlength="5">
+                     <!-- here we have used ngModel for binding template reference variable-->
+            </div>
+
+             <!--below is form validation for password-->
+             <div *ngIf="password.invalid && password.touched">
+                    <div class="alert alert-danger" *ngIf="password.errors.required">field is required here</div>
+                    <div class="alert alert-danger" *ngIf="password.errors.minlength">minlength is 5</div>
+                </div>
+        
+            
+        <div class="text-center">
+            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="reset" class="btn btn-primary ml-5">Reset</button>
+        </div>
+
+        
+        </form>
+        
+
+    </div>
+</div>

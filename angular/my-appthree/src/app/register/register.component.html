@@ -1,0 +1,86 @@
+<div class="container">
+        <div class="col-md-4 offset-4 mt-5">
+                
+                
+                <form action="" method="POST" [formGroup]='registerform' (ngSubmit)='printform(registerform)'>
+                    <legend class="text-center">Registration form</legend>
+                
+                    <div class="form-group">
+                        <label for="name">firstname</label>
+                        <input type="text" class="form-control"  name="name" placeholder="firstname"  formControlName = 'name'>
+                    </div>
+                    <div *ngIf='name.touched && name.invalid'>
+                        <div class="alert alert-danger" *ngIf='name.errors.minlength'>minlength of field is 3</div>
+                        <div class="alert alert-danger"*ngIf='name.errors.required' >field is mandatory</div>
+                        
+                    </div>
+                
+                    
+                    <div class="form-group">
+                            <label for="name2">Lastname</label>
+                            <input type="text" class="form-control"  name="name2" placeholder="Lastname" formControlName = 'name2'>
+                        </div>
+                        <div *ngIf='name2.touched && name2.invalid'>
+                                <div class="alert alert-danger" *ngIf='name2.errors.minlength'>minlength of field is 3</div>
+                                <div class="alert alert-danger"*ngIf='name2.errors.required' >field is mandatory</div>
+                                
+                            </div>
+                        
+                        
+                    
+                        <div class="form-group">
+                                <label for="phno">Mobileno</label>
+                                <input type="tel" class="form-control"  name="phno" placeholder="Mobileno" formControlName = 'phno'>
+                            </div>
+                            <div *ngIf="phno.touched && phno.invalid">
+                            <div class="alert alert-danger"*ngIf='phno.errors.minlength' >atleast 10 digits are required here</div>
+                        </div>
+                         
+                        
+                        <div class="form-group">
+                                <label for="email">Emailid</label>
+                                <input type="email" class="form-control"  name="email"placeholder="Emailid"  formControlName = 'email'>
+                            </div>
+                            <div *ngIf="email.touched && email.invalid">
+                                    <div class="alert alert-danger"*ngIf='email.errors.email' >accepts only email</div>
+                                    <div class="alert alert-danger"*ngIf='email.errors.minlength' >minlength is 5</div>
+                                    <div class="alert alert-danger"*ngIf='email.errors.required' >field is mandatory</div>
+                                    <div class="alert alert-danger"*ngIf='email.errors.noSpace' >no space is accepted</div>
+                                </div>
+
+
+                              
+                        <div class="form-group">
+                                <label for="password">Password</label>
+                                <input type="password" class="form-control"  name="password" placeholder="password" formControlName = 'password' >
+                            </div>
+                            <div *ngIf="password.touched && password.invalid">
+                                    <div class="alert alert-danger"*ngIf='password.errors.required' >field is mandatory</div>
+                                    <div class="alert alert-danger"*ngIf='password.errors.minlength' >minlength is 4</div>
+                                </div>
+
+                           
+                                
+                        <div class="form-group">
+                                <label for="reenter_password">Reenter Password</label>
+                                <input type="password" class="form-control" id="" name="reenter_password" placeholder="reenter password" formControlName = 'reenter_password'> 
+                            </div>
+                            <div *ngIf="reenter_password.touched && reenter_password.invalid">
+                                    <div class="alert alert-danger"*ngIf='reenter_password.errors.required' >field is mandatory</div>
+                                    <div class="alert alert-danger"*ngIf='reenter_password.errors.minlength' >minlength is 4</div>
+                                </div>
+                            
+
+                            
+                        
+
+                    
+                            <div class="text-center">
+                                    <button type="reset" class="btn btn-primary mr-5" >reset</button>
+                    <button type="submit" class="btn btn-primary ml-6 ">Register</button>
+
+                </div>
+                </form>
+                
+            </div>
+</div>

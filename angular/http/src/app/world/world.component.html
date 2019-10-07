@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-3">
+        <h3 class="text-center">Business news</h3>
+        <div *ngFor = 'let bus of businessnews'>
+                <img src="{{bus.urlToImage}}" alt="" class="card-img-top">
+                <h4>{{bus.title}}</h4>
+                <p>{{bus.description}}</p>
+                <a href="{{bus.url}}" class="btn btn-primary">click here for more info</a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+            <h3 class="text-center">Science news</h3>
+            <div *ngFor = 'let sci of sciencenews'>
+                    <img src="{{sci.urlToImage}}" alt="" class="card-img-top">
+                    <h4>{{sci.title}}</h4>
+                    <p>{{sci.description}}</p>
+                    <a href="{{sci.url}}" class="btn btn-primary">click here for more info</a>
+            </div>
+    </div>
+    
+
+    <div class="col-md-3">
+            <h3 class="text-center">Technology news</h3>
+            <div *ngFor = 'let tech of technologynews'>
+                    <img src="{{tech.urlToImage}}" alt="" class="card-img-top">
+                    <h4>{{tech.title}}</h4>
+                    <p>{{tech.description}}</p>
+                    <a href="{{tech.url}}" class="btn btn-primary">click here for more info</a>
+            </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+  <div class="container">
+        <div class="card card-body col-md-3 mt-4 float-left">
+        <div *ngFor="let r of receipes">
+            <img src="{{r.imgurl}}"  class="card-img-top" (click)='sendreceipe(r)'>
+        <h3 class="card-title">{{r.name}}</h3>
+        </div>
+    </div>
+        <app-receipesdetails [receipesdetail]='receipesdata'></app-receipesdetails>
+</div> 

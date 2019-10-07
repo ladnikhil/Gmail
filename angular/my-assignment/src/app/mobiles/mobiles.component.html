@@ -1,0 +1,17 @@
+
+
+<div class='container mt-4'>
+    <div  class="card card-body col-md-3  float-left" >
+            <div *ngFor="let mob of mobiles" >
+      
+                    <img src="{{mob.img}}" class="card-img-top" (click)='mobileDetails(mob)' >
+                    <h4 class="card-title">{{mob.brand}}</h4>
+                
+                </div>
+        
+    </div>
+           
+    
+    <app-mobile-details [data]='mobileData'></app-mobile-details>
+  
+</div>

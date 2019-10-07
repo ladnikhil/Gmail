@@ -1,0 +1,38 @@
+<div class="container">
+    <div class="col-md-4 offset-md-4 card card-body mt-5">
+        
+        <form action="" method="POST" #Loginform='ngForm' (submit)=printdata(Loginform) >
+            <legend class="text-center">Login from</legend>
+        
+            <div class="form-group">
+                <label for="username">username</label>
+                <input type="email" class="form-control" name="username" placeholder="username" #username='ngModel' ngModel minlength="5" required>
+            </div>
+            <div *ngIf="username.touched && username.invalid">
+                <div class="alert alert-danger" *ngIf="username.errors.minlength">minlength of 5 is required</div>
+                <div class="alert alert-danger" *ngIf="username.errors.required">Field is required</div>
+
+            </div>
+        
+
+            <div class="form-group">
+                    <label for="password">password</label>
+                    <input type="password" class="form-control" name="password" placeholder="password" #password='ngModel' ngModel minlength="5" required>
+                </div>
+                <div *ngIf="password.touched && password.invalid">
+                        <div class="alert alert-danger" *ngIf="password.errors.minlength">minlength of 5 is required</div>
+                        <div class="alert alert-danger" *ngIf="password.errors.required">Field is required</div>
+        
+                    </div>
+            
+            
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-success ml-5">reset</button>
+        </div>
+        </form>
+        
+
+    </div>
+
+</div>

@@ -1,0 +1,22 @@
+<div class="container col-md-6 offset-md-3">
+    <table class="tabla table-boderd table-hover mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Avatarurl</th>
+                <th>Nodeid</th>
+                <th>url</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let git of github; index as i'>
+                <td>{{i+1}}</td>
+                <td><img src="{{git.avatar_url}}" alt=""class="url"></td>
+                <td>{{git.node_id}}</td>
+                <td><a href="{{git.url}}"class="btn btn-primary">click here for more info</a></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>

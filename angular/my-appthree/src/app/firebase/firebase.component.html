@@ -1,0 +1,16 @@
+<div class="container col-md-4 offset-md-4">
+    
+    <form action="" method="POST" #loginform='ngForm' (nsubmit)='printform(loginform.value)'>
+        <legend>add user</legend>
+    
+        <div class="form-group">
+            <label for="name">name</label>
+            <input type="text" class="form-control" name='name' placeholder="name" ngModel [(ngModel)]='firebaseservice.selecteduser.name'>
+        </div>
+    
+        
+    
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    
+</div>

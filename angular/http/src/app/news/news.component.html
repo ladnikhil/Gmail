@@ -1,0 +1,43 @@
+
+  <div class="row">
+      <div class="col-md-3">
+            <h3 class="text-center">Entertainment news</h3>
+            <div  *ngFor="let enter of entertainmentnews">
+
+                <img src="{{enter.urlToImage}}" alt="" class="card-img-top">
+                <h4>{{enter.title}}</h4>
+                <p>{{enter.description}}</p>
+                <a href="{{enter.url}}" class="btn btn-primary">click here for more info</a>
+            </div>
+
+      </div>
+      <div class="col-md-6">
+            <h3 class="text-center">General news</h3>
+                <div  *ngFor="let gen of generalnews">
+       
+                    <img src="{{gen.urlToImage}}" alt="" class="card-img-top">
+                    <h4>{{gen.title}}</h4>
+                    <p>{{gen.description}}</p>
+                    <a href="{{gen.url}}" class="btn btn-primary">click here for more info</a>
+                </div>
+            </div>
+
+        <div class="col-md-3">
+               <h3 class="text-center">Sports news</h3>
+                <div  *ngFor="let sport of sportsnews">
+       
+                        <img src="{{sport.urlToImage}}" alt="" class="card-img-top">
+                        <h4>{{sport.title}}</h4>
+                        <p>{{sport.description}}</p>
+                        <a href="{{sport.url}}" class="btn btn-primary">click here for more info</a>
+                </div>
+       
+
+      </div>
+
+
+
+  </div>
+
+
+                 

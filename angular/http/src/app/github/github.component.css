@@ -1,0 +1,16 @@
+.url{
+    height: 200px;
+    width: 200px;
+    background: solid black 20px;
+    border-radius: 20px;
+}
+
+
+.thead-dark{
+    background: black;
+    color: azure;
+}
+
+tbody{
+    background:lightgrey;
+}

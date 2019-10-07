@@ -1,0 +1,16 @@
+<table class="table table-border table-hover">
+    <thead>
+        <tr>
+            <td>index</td>
+            <td>Name</td>
+            <td>Company</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let u of user;index as i">
+            <td>{{i+1}}</td>
+            <td>{{u.name}}</td>
+            <td>{{u.company}}</td>
+        </tr>
+    </tbody>
+</table>

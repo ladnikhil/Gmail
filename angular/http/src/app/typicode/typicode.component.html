@@ -1,0 +1,23 @@
+<div class="container">
+    <table class="table table-border table-hover mt-5">
+        <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>userid</th>
+                <th>Title</th>
+                <th>Body</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = 'let typ of typicode;index as i'> 
+                <td>{{typ.id}}</td>
+                <td>{{typ.userId}}</td>
+                <td><h2>{{typ.title}}</h2></td>
+                <td><h5>{{typ.body}}</h5></td>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+

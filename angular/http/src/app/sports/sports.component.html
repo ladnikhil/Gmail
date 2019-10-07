@@ -1,0 +1,10 @@
+<div class="container">
+<div class="col-md-3 mt-4 card card-body float-left">
+    <div  *ngFor = "let sport of sports">
+        <img src="{{sport.img}}" alt=""class="card-img-top" (click)=sendsports(sport)>
+        <h4 class="card-title">{{sport.name}}</h4>
+    </div>
+</div>
+
+<app-sports-details [sportsdetails]='sportsdata'>  </app-sports-details>
+</div>

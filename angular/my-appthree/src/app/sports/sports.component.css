@@ -1,0 +1,4 @@
+.card.card-body.col-md-3.mt-5{
+    overflow: scroll;
+    height: 600px;
+}
