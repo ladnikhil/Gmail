@@ -1,0 +1,62 @@
+
+bootstrap  is open source framework for css and javascript to built responsive webpages
+
+any screen is divided in 12 columns
+Desktop: col-lg-12
+Laptop: col-md-12
+Tablet: col-sm-12
+Mobile: col -xs-12 --------- till bootstrap 3
+now it has col-12  ----for bootstrap 4
+
+<link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css"> --- to link bootstrap
+
+container class gives spaces ats start and ending of screen
+
+alertbootstrap - documentations - components
+
+always link bootstrap folder then bootstrap.css -------- <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css">
+then 
+atlast write in script tag
+js folder ------<script src="./js/jquery-3.4.1.js"></script>
+
+then another script tag 
+bootstrap js folder ----------- <script src="./bootstrap-4.3.1-dist/js/bootstrap.js"></script>
+
+
+-------------------------------------------------------------------------------------------------
+
+			        BOOTSTRAP CLASSES
+btn/text/bg-primary
+btn/text/bg-success
+btn/text/bg-primary
+btn/text/bg-warning
+btn/text/bg-light
+btn/text/bg-danger
+
+-------------------------------------------------------------------------------------
+				FORM
+
+b3-form ------to call form
+offset ---- to make form in middle ----- offset-(no of columns)
+CARD isused to give border to form  --- always give it in container class
+form-control is for alignment in form
+
+----------------------------------------------------------------------------------------
+				TABLE
+
+table-bordered  --- to give border to table
+table-striped ----- to give nth child designing to table
+table-hover-------to give hover to table
+to give paricular color use ------ class= "bg-info"
+
+-----------------------------------------------------------------------------------------
+				image
+mx-auto d-block --------- to make image in center
+img-thumbnail ------------to give border to image
+rounded-circle-----------to make image round
+float-left---------to make imageleft side
+
+-------------------------------------------------------------------------------------------
+			FONT AWESOME
+
+First link tag with font awesome folder
