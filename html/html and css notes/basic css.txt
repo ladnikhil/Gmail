@@ -1,0 +1,164 @@
+css discovered by hakon wiun lie -----1994
+cascading style sheets
+it is used to describ look and formatting of document written in markup language
+------------------------------------------------------------------------------------------------
+css syntax
+
+it contains
+
+selector
+property
+value
+
+selector{
+	property:value;
+	}
+
+---------------------------------------------------------------------
+		TYPES OF CSS
+
+external ss-------<link>
+internal ss--------<style>
+inline ss-----<h1 style=""> attribute
+
+rgb values ranges from 0 to 255
+justify provides equal width
+
+focus---outline:none to remove border if border radius applied
+
+display:block-------------------------------------- to write content below input and take it as a label
+
+text-decoration is used todecorate text
+3 types of it
+overline
+linethrough
+underline
+
+text-transform
+3 types of it
+uppercase
+lowercase
+capitalize
+
+direction
+ltr and rtl
+
+by giving list style none in unorderd list bullets will get disappear
+display to make inline to block level
+for makinf square to circle use border radius : 50%
+user agent stylesheet is default css for browser
+opacity is used for making thing transparent
+
+-------------------------------------------------------------------------------------
+			CSS SELECTOR
+element
+attribute
+group selector
+universal -------- *
+type/element-----------
+class---------(.) it caan be called many times
+id selector---------(#) its unique
+
+------------------------------------------------------------------------------------------
+
+			BOX MODEL
+
+content 
+padding
+border
+margin-----------always transparent------one pixel 4 parameter
+					two pixel 2 parameter
+					three pixel 3 parameter
+					four pixel 4 parameter
+
+----------------------------------------------------------------------------------------------------
+bootstrap has angular.io and its website is getbootstrap.com
+bootstrap was created by twitter
+bootstrap is used to responsive page
+
+--------------------------------------------------------------------------------------------------
+
+			BACKGROUND IMAGE FOR PAGE
+use one extra dot in path
+body{
+                background-image: url(../images/mood-4269040__340.jpg);
+                background-position: center;
+                background-size: cover;
+                
+            }
+---------------------------------------------------------------------------------------------------------
+
+css properties 
+
+
+font-style
+font-family
+border-radius
+background-image:url()
+background-size:cover
+box-shadow
+margin
+text-align
+hover
+outline:for removing background 
+cursor:pointer
+focus:
+width
+height
+
+---------------------------------------------------------------------------------------------------
+
+						TABLE
+
+border-collapse - collapse -----------to normal line border
+tr:nth-child(even)--------only for even rows
+tr:nth-child(odd)--------only for odd rows
+
+-----------------------------------------------------------------------------------------------------
+
+					TRANSFORM
+
+transform:scale(1,1) ------------ to move image up and down within itself
+	       (width,height)
+
+transition:all 2s ---------------- to slow movement of transform
+
+translate:rotate(20deg)------------ to rotate any item
+
+translate:scale(20,30)----------------to change height and width of element
+
+transform: scaleX(2);------------ TO change width of element of x axis
+
+transform: scaleY(2);------------ TO change height of element of Y axis
+
+transform:skew(20deg,30deg)---------to change angle of element(x,y)
+
+transform:skewX(30deg)---------to change angle of element with x axis
+
+transform:skewy(30deg)---------to change angle of element with y axis
+
+transform:matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())---combination of all 2d transform
+
+----------------------------------------------------------------------------------------------------------
+					ANIMATIONS
+animation:glow 1s infinite linear
+to write animation we should write ------@keyframes in css
+
+@keyframes glow{
+    0% ,25% ,75% ,100%{
+        transform:scale(0.5,0.5);
+    }
+    50%{
+        transform:scale(2, 2);
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------
+transform:translate ----- to move animation through y/X axis;
+ 0%{
+        transform:translateY(0px);
+    }
+
+background: linear-gradient(top to bottom is by default here,red,yellow,blue,black); -------------- to give mixturee of background
+
+background: radial-gradient(red,yellow,blue,black);------------- to give background mixture in circular shape

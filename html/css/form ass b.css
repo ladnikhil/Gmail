@@ -1,0 +1,25 @@
+label{
+    font-weight: bold;
+   
+}
+
+.addr{
+    width:30%;
+    }
+
+span{
+    color:grey;
+    /* padding: 10px; */
+}
+
+.lastname{
+    margin-left:90px;
+}
+
+.state{
+    margin-left: 138px;
+}
+
+.country{
+    margin-left:70px;
+}

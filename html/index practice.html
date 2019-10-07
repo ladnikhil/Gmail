@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>practice page</title>
+        <link rel="stylesheet" href="./css/style.css"
+    </head>
+</html>
+<body>
+    <form action="#" method="GET">
+        <fieldset>
+            <legend>registration form</legend>
+        <div>
+            <label for="username">username</label>
+            <input type="email"  name="username" id="username" required minlength="5" max lenghth="10" 
+            pattern="user" placeholder="username" value="user">
+        </div>
+
+        <div>
+            <label for="password">password</label>
+            <input type="password" name="password" id="password" required placeholder="password">
+        </div>
+
+        
+        <textarea name="description" id="" rows="10" cols="30">
+        </textarea>
+
+        <div>
+            <label for="number">number</label>
+            <input type="number" name="number" id="number" min="1" max="25">
+        </div>
+        
+        <div>
+        <label for="gender">gender:</label>
+        <input type="radio" name="male" id="male">male
+        <input type="radio" name="male" id="male">female
+        </div>
+
+        <div>
+            <input type="checkbox" name="language" id="language">python
+            <input type="checkbox" name="language" id="language">c
+            <input type="checkbox" name="language" id="language">java
+            <input type="checkbox" name="language" id="language">c++
+            
+        </div>
+
+        <div>
+            <select name="language" id="language" >
+                <option values="java" selected>java</option>
+                <option values="c">c</option>
+                <option values="c++">c++</option>
+                <option values="python">python</option>
+                <option values="html">html</option>
+            </select>
+        
+        <input list="browsers">
+            <datalist id="browsers">
+                <option value="internet explorer">
+                <option value="mozilla">
+                <option value="chrome">
+                 <option value="opera">
+            </datalist>
+        </div>
+
+        <div>
+            <input type="reset"name="" id="">
+        </div>
+        
+        <div>
+            <input type="hidden" id="">
+        </div>
+        <div>
+            <input type="file" name="" id="">
+        </div>
+
+        <div>
+            <input type="range" name="" id="" minlength="1" maxlength="20" step="5">
+        </div>
+
+        <div>
+            <label for="search">search</label>
+            <input type="search" name="search" id="search">
+        </div>
+
+        <div>
+            <label for="url">url</label>
+            <input type="url" name="url" id="url">
+        </div>
+
+        <div>
+            <label for="color">color</label>
+            <input type="color" name="color" id="color">
+        </div>
+
+        <div>
+            <label for="date">date</label>
+            <input type="date" name="date" id="date">
+        </div>
+
+        <div>
+            <label for="datetime-local">datetime-local</label>
+            <input type="datetime-local" name="datetime-local" id="datetime-local">
+        </div>
+
+        <div>
+            <label for="week">week</label>
+            <input type="week" name="week" id="week">
+        </div>
+        
+        <div>
+            <input type="submit" value="submit">
+        </div>
+
+        
+    </fieldset>
+
+    </form>
+</body>

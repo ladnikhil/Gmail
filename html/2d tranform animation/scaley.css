@@ -1,0 +1,28 @@
+span{
+    background: silver;
+    box-shadow: 0 0 15px black;
+    border-radius: 20px;
+    display:inline-block;
+    padding: 20px 25px;
+    margin: 10px;
+    animation: movement 1s infinite linear;
+}
+
+body{
+    margin-left: 350px;
+    margin-top: 180px;
+}
+
+
+@keyframes movement{
+    20%{
+        transform: scaleY(1);
+    }
+
+   50%{
+        transform: scaleY(2);
+}
+    100%{
+        transform: scaleY(0);
+    } 
+}

@@ -1,0 +1,95 @@
+body{
+    background: #eee;
+    margin:0;
+
+}
+
+#header {
+    background: #fff;
+    padding: 10px;
+    margin: 0px;
+    height: 20px;
+}
+
+.logo{
+    height: 25px;
+    width: 102px;
+     float: left;
+}
+
+.menu{
+    width: 80%;
+    text-align: right;
+    margin:0;
+    float:right;
+
+}
+
+.logo img{
+    height: 20px;
+    width: 80px;
+    padding: 0px
+
+}
+
+.menu a{
+    text-decoration: none;
+    color: #fff;
+    padding: 5px;
+    border:0px solid #eee;
+    font-size:13px;
+    background: red;
+    font-weight: bold;
+    border-radius: 10px;
+
+}
+
+.menu a hover{
+    background:white;
+    transform:skew:(30%);
+    transition: cubic-bezeir(0.075,0.82,0.165,1)
+
+}
+
+#slider{
+    width: 100%;
+    height: 729px;
+
+}
+
+#slider img{
+    width: 100%;
+    height: 713px;
+}
+
+.helptext{
+    opacity:0.8;
+    background: #fff;
+    position: absolute;
+    top: 141px;
+    left: 200px;
+    width: 300px;
+    margin:120px 408px;
+
+}
+
+.helptext h1{
+    margin: 10px auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-size:15px;
+    text-shadow:1px 1px 1px #111;
+    border-bottom: 2px solid red;
+    padding-bottom:5px;
+    width:176px;
+    color: indianred;
+
+}
+
+.helptext p{    
+    font-size: 12px;
+    padding: 0px 30px;
+    line-height: 15px;
+
+     
+}

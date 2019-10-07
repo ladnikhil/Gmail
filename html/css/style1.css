@@ -1,0 +1,31 @@
+h1{
+    color:crimson;
+    background: blue;
+    text-decoration: none;
+    direction: ltr;
+    text-shadow: 3px 2px red;
+    font-style: italic;
+
+
+}
+p{
+    background: blue;
+    direction: rtl;
+
+}
+
+
+
+*{
+    background: tomato;
+}
+
+img{
+    padding: 50px;
+    border: 2px dotted black;
+
+}
+
+body{
+    background-image: url('./images/untitled.png');
+}

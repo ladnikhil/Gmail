@@ -1,0 +1,54 @@
+computer is combination of hardware and operating system
+
+smartphone is combination of hardware and operating system but cannot run jdk on its own
+
+java understands .class and then jvm/jre converts it into .java
+
+language is for communications 
+
+java programming language is platform independent
+java application is platform dependent
+
+user - application- Operating system - hardware.
+
+application is set of programs + functionality + known file extension + platform dependent + interface
+
+2 types of application standalone and web application
+
+standalone is specific to users and must be present in our computer
+
+web application is presented in other computer and they are internet/network connected and need browser.
+
+network/internet is collection of computers
+
+internet is public
+intranet is private ------------for local cause
+
+server is computer but has high hardware configuration
+server uses unix because it is more stable
+
+operating system is interface between hardware and application
+database/database server is an application/server from gb to tb used for storage and maintainance.
+hadoop is an application from for petabyte used for storage and maintanance.
+
+client tier ----------- business tier ---------------- data tier.----------------- 3 tier architecture
+(browser)		servelets			mongdb
+html			spring 
+css			hibernate
+angular			spring
+javascript		jsp
+
+
+if we install any application in computer then it refers 2-tier architecture.
+if its 3 tier it uses browser 
+
+-----------------------------------------------------------------------------------------------------
+
+presentation logic -----------------------presenting data logic (frontend)
+
+business logic--------------------------(backend)
+
+
+
+
+

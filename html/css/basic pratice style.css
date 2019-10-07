@@ -1,0 +1,61 @@
+body{
+    text-align: center;
+    margin:0;
+}
+
+
+.logo{
+    height: 30px;
+    width: 80px;
+    align-content:center;
+
+}
+
+
+.logo img{
+    height:30px;
+    width: 110px;
+    top: 141px;
+    left: 200px;
+    right:500px;
+    margin: 6px 690px;
+}
+
+#info{
+    background: white;
+
+
+}
+
+.username,.password,.submit,.forgot_password{
+    
+    opacity:0.9;
+    display:block;
+    text-align:center;
+    font-style: italic;
+    color:yellow;
+    padding:10px;
+    border:10px;
+    top:141px;
+    left:200px;
+    right:500px;
+    margin: 10px 61px 10px 10px;
+}
+
+
+.img{
+    height:100px;
+    width:100%;
+}
+.nature img{
+    height: 800px;
+    width: 100%;
+    padding: 0px;
+    top: 140px;
+    left: 102px;
+    right: 20px;
+    border: 5px;
+    margin: -203px 0px 5px;}
+
+
+

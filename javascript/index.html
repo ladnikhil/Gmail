@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript</title>
+
+
+    
+    <script>
+        //string
+        var heroName = 'akshay';
+        console.log("Hero Name = "+heroName);
+
+        //NUMBER
+        var age = 50;
+        console.log("Age = "+age);
+
+        //boolean
+        var hassixpacks = false;
+        console.log("has six packs = "+hassixpacks);
+
+        //null
+        var nullData = null;
+        console.log("null data = "+nullData);
+
+        //undefined
+        var address;
+        console.log("Address = "+address) ;
+    </script>
+    
+
+</head>
+<body>
+
+    
+    <script>
+        //reference datatypes
+        //objects
+        var person;
+        person = {
+            Name: 'Nikhil',
+            age: 21,
+            height:5.8,
+            getName : function(){
+                return this.Name;
+                        }
+                 };
+
+                 console.log("name = "+person.Name);
+                 console.log("age = "+person.age); 
+                 console.log("height = "+person.height);
+                 
+                 var Name = person.getName();
+                 console.log("Name = "+Name);
+
+        /// another method to declare an object
+        
+        
+        var person = new Object();
+        person.Name = 'Nikhil';
+        person.age = 21;
+        person.height =5.8;
+        
+        console.log('my name is '+person.Name);
+        console.log("age = "+person.age); 
+        console.log("height = "+person.height);
+
+        
+    </script>
+
+    <script src="./app.js">
+    </script>
+
+    
+</body>
+</html>

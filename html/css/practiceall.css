@@ -1,0 +1,68 @@
+body {
+ /* background-image: url('../images/evening-sun-4363290__340.jpg'); */
+ background-position: center;
+ background-size: cover;
+}
+
+
+form {
+    text-align: center;
+    background: silver;
+    background-image: url('../images/giphy.webp');
+    height: 170px;
+    width: 200px;
+    padding:30px;
+    margin-left:600px;
+    margin-top: 200px;
+}
+
+button{
+    margin-top: 20px;
+    border-radius: 20px;
+    outline: none;
+}
+
+legend{
+    padding: 10px;
+}
+
+input{
+    border-radius: 20px;
+    outline: none;
+}
+
+
+button:hover{
+    cursor: pointer;
+    background:green;
+}
+
+.anim{
+    height:250px;
+    width: 100px;
+    animation: glow 1s infinite linear;
+}
+
+@keyframes glow{
+    0%,75%,100%{
+        transform: scale(0.5,0.5);
+    }
+    50%{
+        transform: scale(2,2);
+    }
+}
+
+
+li:nth-child(even){
+    background-color: yellowgreen;
+    animation-delay:0.3s;
+    box-shadow: 0 0 15px black;
+   
+}
+
+
+li:nth-child(odd){
+    background-color: orange;
+    animation-delay:0.4s;
+    box-shadow: 0 0 15px black;
+}

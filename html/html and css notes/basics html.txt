@@ -1,0 +1,250 @@
+ to create a folder with command prompt use mkdir foldername
+control + / for commenting
+ctrl f for finding element 
+
+hyper means web
+touch creates any extension file
+html is hyper text markup language and not case sensitive and not a programing language
+code . directly opens file from folder to vs studio
+meta is for sending information to browser
+meta elements represents various kinds of metadata that cannot be expressed using titile,base,link,style and script elements
+
+
+html 1 1992
+html 2 1995
+html 3.2 1997
+html 4.01 1999
+xhtml 2002-2004
+htnl 5 latest version
+
+v8 engine is javascript engine it converts normal code into machine code created by google 
+v8 is google's open source high performance javascript and webassembly engine,written in c++
+
+spidermonkey is mozilla's javascript engine written in c and c++ and is avaliable under MPL2
+
+Chakra is a JScript engine developed by Microsoft for its 32-bit version of the Internet Explorer 9 (IE9) web browser.
+
+Apple developed the Nitro engine for its Safari browser
+
+current verion of javascript is es6
+current version of bootstrap is 4
+
+<> is known as tag
+3 tags constant,fixed tag(paired tagss)(container tag),independent tags
+
+content witthin <> and </> is known as elements.
+
+<!DOCTYPE html> tells type of html version we are using
+<html> here html is tag name
+<html> and</html> are root elements
+
+<head> is used to give title to web browser
+<head> represent a collection of metadata for documents
+<!--->comment in html
+
+use live server 5.6.1 it automatically updates after saving
+
+we have h1 to h6
+h1 is biggest tag in font 
+
+lorem epsum  is dummy used for dummy text----------------------------------- lipsum.com provides dummy text
+lorem1 it will only give you one word
+lorem2 it will only give you two word
+
+<p> represents a para
+
+W3C is world wide web constromium and it is used for maintaining html
+
+img tag is empty tag and does not have ending tag and it works with attribute.
+attribute provides additional info to tag
+
+<img src="path"/>    src is attribute name and info inside"" is attribute info
+alt tag is used with image tag 
+alt tag contains height width
+
+<img src="./(foldername)    " to add pic from particular tag
+align is attribute used with img src
+
+<ol> is ordered list
+<li> is list item inside ordered list
+li*n n tells number of elements in list
+
+for any tag shortcut --------------------------------------- tagname*no of times u want that tag
+
+
+<ul> for unordered list  ------ type="square,circle,disc    and disc is default
+li*n n tells number of elements in list
+
+defination list is for defining a term   -------------- for noting list
+<dt> is data titile in defination list
+<dd> is for elements in defination list  used as <li> in ordered and unordered list 
+
+blocklevel elements take 100% width      --------- div tag
+inline element take element width	---------- span tag
+
+img src and anchor tag (<a>) is inline element
+
+</br> is used to break a line
+
+<div> is used to construct webpage
+
+<link> tag makes use of anchor tag when we want to link .html to .css
+write link tag within <head> tag
+
+<a> tag is anchor tag and is used to link 2 pages 
+<a href="path">
+target-"_blank" is used to open link on new tab
+target-"_new" is used to open link on new tab
+
+css is cascading style sheet
+style sheet should be within head tag
+
+------------------------------------------------------------------------------------------------
+
+                        INLINE STYLESHEET
+			external stylesheet  mostly use this by linking <link rel="stylesheet" href=" path - ./folder/filename.css "/> is used to link style sheet
+			internal stylesheet									
+--------------------------------------------------------------------------------------------------
+STYLE ELEMENT - it allows authors to embed style information in their documents.the style element is one of several inputs to styling model.
+<style> inside contains css not html
+id is css selector
+id is used to give for particular block
+html works with predefined tags and predefined attributes
+in css instead of id we can use  #
+class we can call multiple times
+. means class 
+browser reads id then class then element
+css should be within <head> tag
+
+<link rel="stylesheet" href=" path - ./folder/filename.css "/> is used to link style sheet
+
+<audio src="./media/horse.ogv" controls="controls"></audio> for audio
+<video src="./media/mov_bbb.mp4" controls="controls"></video> for video
+we have autoplay attribute to autoplay 
+loop attribute is used to play it in loops
+
+<span> is inline element
+
+height and width only works in <div> and not in span
+
+display converts inline into block elements
+
+display - inline-block makes it in single line
+
+span img is used when we use image with span tag
+------------------------------------------------------------------------------------------------------------
+<form> is used to collect user information
+foem elements represents a collection of form associated elements,some of which can represent sditable values that canbe
+submitted to a server for processing
+
+<form action="path to were we want to go on server and database" method="GET/POST/DELETE/PUT"/>
+novalidate is attribute of from tag
+
+GET and POST used in html
+
+GET is used to gain info from other server and less secure and only we get limited data
+
+POST is used to create a data and store ir in server and is most secure and unlimited data
+
+PUT is used to modify purpose of data
+
+DELETE is used to delete data
+
+<label> label element represents a caption in user interface.caption can be associated with specific form control,known as label elements 
+label control,either using the for attribute,or by putting the form control inside label element itself
+
+in label for attribute and id attribute should have same name
+
+in input tag name attribute is used for knowning server and id is used for css and javascript property
+
+<textarea> is multiple line plane text and it has min 30 columns and 10 rows
+
+novalidate attribute disables javascript validation
+
+textarea,text,radio button,select,file,reset -----html 4
+email,number,range,color,datalist---------------html 5
+
+whenever condition is their use radio button and only one option
+whenever we use radio button use name attribute so that it becomes true or false
+
+checkbox is used for multiple options
+
+file is used to import file
+
+search tag similar to text only difference is that we can close it.
+
+hidden and template can later be used when we use javascript
+hidden and template dont have value only attribute
+
+<template> template element is used to declare fragments of html that can be cloned and inserted in document by script
+
+tel is only supported in safari browser
+
+<fieldset> fieldset gives layout 
+
+<legend> it is caption 
+
+required is used to give mandatory field
+
+
+
+select is indepedent element and represents a control for selecting amnogst a set of options
+
+selected in select is default value
+
+multiple in select is used to select multilple values in select
+
+placeholder is a reference text
+
+disable is used for non editable content
+
+-----------------------------------------------------------------------------------------------------------
+                  		TEXT FORMATTING TAGS
+FIXED TAGS
+
+<mark>------------- used to highlight
+
+<u>------------------used to underline
+
+<b>/<strong> ----------used to bold letters
+
+<i>/<em>-----------used to make text in italics
+
+<del>/<strike>---------used to delete
+
+<sup>----used to superscript-------------10<sup>th</sup>
+
+<sub>----used to subscript----------10
+				      th
+-----------------------------------------------------------------------------------------------------------
+                    	FEATURES OF HTML5
+geolocation
+microdata
+drag and drop
+new semantic elements(browser friendly)-----<header>,<footer>,<article>,<section>
+audio and video
+canvas
+attributes of form elements like number,data,time,calender and range
+
+----------------------------------------------------------------------------------------------------------
+
+			HTML5 TAGS
+
+<header>---- header
+<footer>---
+<section>----for sections
+<article>------articles in newspaper
+<nav>---------navigation
+<main>---------write content
+<aside>----
+<figure>----------for figure
+<figure-c>-----figure caption
+<details>----for details
+<summary>---for summary and inside 
+<progress>----for checking progress(blue color)
+<meter>----------for checking progress(green color)
+
+	
+
+
+

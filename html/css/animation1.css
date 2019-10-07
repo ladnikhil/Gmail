@@ -1,0 +1,81 @@
+span{
+    background: silver;
+    box-shadow: 0 0 15px black;
+    border-radius: 20px;
+    display:inline-block;
+    padding: 20px 25px;
+    margin: 10px;
+    animation: movement 1s infinite linear;
+}
+
+@keyframes movement{
+    0%{
+        transform:translateX(0px);
+    }
+   50%{
+        transform: translateX(40px);
+}
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+div{
+    margin-left:350px;
+    margin-top:180px;
+}
+
+
+span:nth-child(1){
+    background: linear-gradient(30deg,black,rgba(0,12,10,11));
+    animation-delay: 0.2s;
+
+}
+
+
+span:nth-child(2){
+    animation-delay: 0.3s;
+
+}
+
+
+span:nth-child(3){
+    animation-delay: 0.4s;
+
+}
+
+
+span:nth-child(4){
+    animation-delay: 0.5s;
+
+}
+
+
+span:nth-child(5){
+    animation-delay: 0.6s;
+
+}
+
+
+span:nth-child(6){
+    animation-delay: 0.7s;
+
+}
+
+
+span:nth-child(7){
+    animation-delay: 0.8s;
+
+}
+
+
+span:nth-child(8){
+    animation-delay: 0.9s;
+
+}
+
+
+span:nth-child(9){
+    animation-delay: 1;
+
+}

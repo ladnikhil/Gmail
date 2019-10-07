@@ -1,0 +1,24 @@
+table,tr,td,th{
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    cursor: pointer;
+}
+    
+
+th{
+    background-color:black;
+    color:whitesmoke;
+}
+
+
+td:hover{
+    background: red;
+    color:white;
+}
+tr:nth-child(even){
+    background-color: yellowgreen;
+}
+tr:nth-child(odd){
+    background-color: seagreen;
+}

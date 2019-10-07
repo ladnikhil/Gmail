@@ -1,0 +1,86 @@
+span{
+    color: gray;
+}
+
+label{
+    float: left;
+}
+
+input{
+    border-radius: 5px;
+}
+
+form{
+    width:629px;
+    box-sizing: border-box;
+    height:270px;
+    background: silver;
+
+}
+body{
+    width:100%;
+    height:100%;
+    box-sizing: border-box;
+
+}
+
+.firname{
+    margin-left: 50px;
+}
+
+.firstname{
+    margin-left:130px;
+}
+.middlename{
+    margin-left:94px;
+}
+.lastname{
+    margin-left:78px;
+}
+
+.addr{
+    margin-left: 18px;
+}
+.streetaddress,.streetaddressline2{
+    margin-left: 130px;
+}
+.addr1{
+    margin-left: 130px;
+}
+.addr2{
+    margin-left: 130px;
+}
+.city{
+    margin-left: 130px;
+}
+.state{
+    margin-left: 137px;
+}
+.country{
+    margin-left: 66px;
+}
+
+.email{
+    margin-left: 31px;
+}
+.phone{
+    margin-left: 26px;
+}
+.date{
+    margin-left: 57px;
+}
+
+button{
+    margin-left: 154px;
+    margin-top:20px;
+    background: yellow;
+    
+    
+}
+
+.next{
+    height:50px;
+    width: 629px;
+    background: black;
+    
+}

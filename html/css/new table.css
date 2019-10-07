@@ -1,0 +1,30 @@
+table{
+    width:100%;
+    text-align: center;
+    font-family: cursive;
+}
+
+table,th,td{
+    
+    border-radius: 20px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+th{
+    background-color: black;
+    color: white;
+}
+
+tr:nth-child(even){
+    background-color: yellowgreen;
+}
+
+
+tr:nth-child(odd){
+    background-color: tomato;
+}
+td:hover{
+    background:red;
+    color: wheat;
+}
