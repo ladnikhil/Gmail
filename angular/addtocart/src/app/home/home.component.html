@@ -1,0 +1,9 @@
+<div class="col-md-12 mt-5">
+    <div class="col-md-4 float-left" *ngFor="let product of Products">
+        <div class="card card-body">
+            <h1>{{product.title}}</h1>
+            <img src="{{product.imgUrl}}" alt="">
+            <h4>{{product.description}}</h4>
+        </div>
+    </div>
+</div>

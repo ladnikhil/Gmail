@@ -1,0 +1,52 @@
+<div class="col-md-12 mt-5">
+    <div class="col-md-4 float-left" *ngFor="let product of Products">
+        <div class="card card-body">
+            <h1>{{product.title}}</h1>
+            <img src="{{product.imgUrl}}" alt="">
+            <h4>{{product.description}}</h4>
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click) = "sendProduct(product)">
+                Edit
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="" #form="ngForm" (ngSubmit)="updateData(product.id , form.value)">
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="title" ngModel #title="ngModel"
+                                        placeholder="Enter Title" [(ngModel)] = "product.title">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" type="text" name="imgUrl" ngModel #imgUrl="ngModel"
+                                        placeholder="Enter Image Url" [(ngModel)] = "product.imgUrl">
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" name="description" id="" cols="30" rows="5" ngModel
+                                        #description="ngModel" placeholder="Enter Description" [(ngModel)] = "product.description"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-outline-success">Add Product</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-danger form-control" (click) = "deleteData(product.id)">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
